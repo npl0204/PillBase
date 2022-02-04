@@ -1,0 +1,9 @@
+Amir Kaidarov CI 102 Group 5
+
+Amir Kaidarov is a Software Engineering major at Drexel University.
+He is passionate about mobile development. Amir has experience in
+designing responsive UI using Flutter SDK and working with external 
+databases like Firebase and PostgreSQL. Moreover, his knowledge of 
+concepts of clean architecture is one of his major strengths. 
+Amir is also knowledgeable in employing data structures and algorithms 
+in Python.   
