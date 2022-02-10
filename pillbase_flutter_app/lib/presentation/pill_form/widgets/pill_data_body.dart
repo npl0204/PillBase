@@ -9,11 +9,7 @@ class PillDataBody extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> units = ["pills", "ml", "mg"];
-    final size = MediaQuery.of(context).size;
-    final focus = FocusScope.of(context);
     final nameEditingController = useTextEditingController();
-    final numberEditingController = useTextEditingController();
 
     return BlocListener<PillFormBloc, PillFormState>(
       listenWhen: (p, c) => p.isEditing != c.isEditing,

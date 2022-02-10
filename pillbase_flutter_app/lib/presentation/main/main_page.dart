@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pillbase_flutter_app/presentation/pill_form/pill_form_page.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pillbase_flutter_app/application/auth/bloc/sign_in_form_bloc.dart';
+import 'package:pillbase_flutter_app/presentation/sign_in/sign_in_page.dart';
+
+import '../../injection.dart';
 
 class MainPage extends StatefulWidget {
   static const routeName = 'reminders-page';
@@ -15,8 +19,11 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        body: PillFormPage(),
-      );
+    return BlocProvider(
+      create: (context) => sl<SignInFormBloc>(),
+      child: const Scaffold(
+        body: SignInPage(),
+      ),
+    );
   }
 }

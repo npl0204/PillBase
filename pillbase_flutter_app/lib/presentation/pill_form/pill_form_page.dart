@@ -128,8 +128,9 @@ class NoteFormPageScaffold extends StatelessWidget {
               ),
               actions: [
                 IconButton(
-                  onPressed: () {
-                  },
+                  onPressed: () => context
+                      .read<PillFormBloc>()
+                      .add(const PillFormEvent.saved()),
                   icon: const Icon(
                     Icons.check,
                   ),
@@ -147,7 +148,9 @@ class NoteFormPageScaffold extends StatelessWidget {
                         const PillDataBody(),
                         TextButton(
                           child: const Text('Save'),
-                          onPressed: () {}
+                          onPressed: () => context
+                              .read<PillFormBloc>()
+                              .add(const PillFormEvent.saved()),
                         ),
                       ],
                     ),
