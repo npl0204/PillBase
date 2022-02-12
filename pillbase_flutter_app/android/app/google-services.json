@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "839264087957",
+    "project_id": "pill-base",
+    "storage_bucket": "pill-base.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:839264087957:android:8b561d5e3290a16cbf109c",
+        "android_client_info": {
+          "package_name": "com.example.pillbase_flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "839264087957-j525cln3oohr1olld8lkm46lbnuv1vmi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDY5075ndKHtHftQcMQe4IsS_nv1j7n-A0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "839264087957-j525cln3oohr1olld8lkm46lbnuv1vmi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
