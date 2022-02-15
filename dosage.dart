@@ -37,9 +37,6 @@ class _MyState extends State<MyApp> {
                   onChanged: (text) {
                     setState(() {
                       Dosage = text;
-                      //you can access nameController in its scope to get
-                      // the value of text entered as shown below
-                      //UserName = nameController.text;
                     });
                   },
                 )),
