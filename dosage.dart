@@ -11,7 +11,6 @@ class MyApp extends StatefulWidget {
 
 class _MyState extends State<MyApp> {
   TextEditingController dosageController = TextEditingController();
-  // ignore: non_constant_identifier_names
   String Dosage = '';
 
   @override
