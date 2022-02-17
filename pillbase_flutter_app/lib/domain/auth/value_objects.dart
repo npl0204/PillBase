@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import '../core/value_validators.dart';
 import '../core/failures.dart';
 import '../core/value_objects.dart';
 
@@ -9,7 +10,7 @@ class EmailAddress extends ValueObject<String> {
   const EmailAddress._({required this.value});
 
   factory EmailAddress(String input) {
-    return EmailAddress._(value: right(input));
+    return EmailAddress._(value: validateEmailAddress(input));
   }
 }
 
@@ -20,6 +21,6 @@ class Password extends ValueObject<String> {
   const Password._({required this.value});
 
   factory Password(String input) {
-    return Password._(value: right(input));
+    return Password._(value: validatePassword(input));
   }
 }

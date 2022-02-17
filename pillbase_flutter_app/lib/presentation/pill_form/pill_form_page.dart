@@ -1,7 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pillbase_flutter_app/application/pill_for/pill_form_bloc.dart';
+import 'package:pillbase_flutter_app/application/auth/bloc/auth_bloc.dart';
+import 'package:pillbase_flutter_app/presentation/sign_in/sign_in_page.dart';
+import '../../application/pill_for/pill_form_bloc.dart';
 import 'package:provider/provider.dart';
 
 import '../../../injection.dart';
@@ -137,6 +139,13 @@ class NoteFormPageScaffold extends StatelessWidget {
                 )
               ],
             ),
+            floatingActionButton: IconButton(
+                icon: const Icon(Icons.exit_to_app),
+                onPressed: () {
+                  context.read<AuthBloc>().add(
+                        const AuthEvent.signedOut(),
+                      );
+                }),
             body: BlocBuilder<PillFormBloc, PillFormState>(
               buildWhen: (p, c) => p.showErrorMessage != c.showErrorMessage,
               builder: (context, state) {

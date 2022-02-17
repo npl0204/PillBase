@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:pillbase_flutter_app/domain/pills/pill_failure.dart';
+import 'pill_failure.dart';
 import 'pill.dart';
 
 abstract class IPillRepository {

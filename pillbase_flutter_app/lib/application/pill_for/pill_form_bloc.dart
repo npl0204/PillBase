@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:pillbase_flutter_app/domain/pills/pill.dart';
-import 'package:pillbase_flutter_app/domain/pills/pill_failure.dart';
-import 'package:pillbase_flutter_app/domain/pills/value_objects.dart';
+import '../../domain/pills/pill.dart';
+import '../../domain/pills/pill_failure.dart';
+import '../../domain/pills/value_objects.dart';
 
 part 'pill_form_event.dart';
 part 'pill_form_state.dart';

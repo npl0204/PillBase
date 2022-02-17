@@ -13,4 +13,6 @@ abstract class IAuthFacade {
     required EmailAddress emailAddress,
     required Password password,
   });
+  Future<Option<AppUser>> getSignedInUser();
+  Future<void> signOut();
 }

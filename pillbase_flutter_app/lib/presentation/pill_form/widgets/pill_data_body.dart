@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:pillbase_flutter_app/application/pill_for/pill_form_bloc.dart';
+import '../../../application/pill_for/pill_form_bloc.dart';
 import 'package:provider/src/provider.dart';
 
 class PillDataBody extends HookWidget {
