@@ -139,13 +139,6 @@ class NoteFormPageScaffold extends StatelessWidget {
                 )
               ],
             ),
-            floatingActionButton: IconButton(
-                icon: const Icon(Icons.exit_to_app),
-                onPressed: () {
-                  context.read<AuthBloc>().add(
-                        const AuthEvent.signedOut(),
-                      );
-                }),
             body: BlocBuilder<PillFormBloc, PillFormState>(
               buildWhen: (p, c) => p.showErrorMessage != c.showErrorMessage,
               builder: (context, state) {

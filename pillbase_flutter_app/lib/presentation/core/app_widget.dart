@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pillbase_flutter_app/application/auth/bloc/auth_bloc.dart';
 import 'package:pillbase_flutter_app/presentation/pill_form/pill_form_page.dart';
+import 'package:pillbase_flutter_app/presentation/pill_overview/pill_overview_page.dart';
 
 import '../../injection.dart';
 import '../sign_in/sign_in_page.dart';
@@ -42,6 +43,7 @@ class AppWidget extends StatelessWidget {
         routes: {
           SignInPage.routeName: (ctx) => const SignInPage(),
           PillFormPage.routeName: (ctx) => const PillFormPage(),
+          PillsOverviewPage.routeName: (ctx) => const PillsOverviewPage(),
         },
       ),
     );
