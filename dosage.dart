@@ -52,6 +52,7 @@ class _TextFieldScreenState extends State<TextFieldScreen> {
             Text(dosage),
             Container(
               child: TextFormField(
+                autovalidateMode: AutovalidateMode.onUserInteraction,
                 controller: _controller,
                 decoration: const InputDecoration(
                   enabledBorder: OutlineInputBorder(
@@ -80,8 +81,8 @@ class _TextFieldScreenState extends State<TextFieldScreen> {
                 ],
                 maxLength: 2,
                 validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'test';
+                  if (value!.isEmpty || value == "0") {
+                    return 'Required';
                   } else {
                     return null;
                   }
@@ -95,11 +96,9 @@ class _TextFieldScreenState extends State<TextFieldScreen> {
                 child: Text("verify"),
                 //color: Color.fromARGB(255, 223, 110, 144),
                 onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    setState(() {
-                      dosage = _controller.text;
-                    });
-                  }
+                  setState(() {
+                    dosage = _controller.text;
+                  });
                 },
               ),
               padding: const EdgeInsets.all(32),
