@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pillbase_flutter_app/presentation/pill_form/pill_form_page.dart';
-import 'package:pillbase_flutter_app/presentation/pill_overview/pill_overview_page.dart';
+import '../../pill_form/pill_form_page.dart';
+import '../../pill_overview/pill_overview_page.dart';
 import '../../../application/auth/bloc/auth_bloc.dart';
 import '../../../application/auth/sign_in_form/sign_in_form_bloc.dart';
 
@@ -33,8 +33,9 @@ class SignInForm extends StatelessWidget {
         );
       },
       builder: (contex, state) {
+        final toggle = state.showErrorMessage;
         return Form(
-          autovalidate: state.showErrorMessage,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: ListView(
@@ -46,6 +47,7 @@ class SignInForm extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 TextFormField(
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
                   decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.email),
                     labelText: 'Email',
@@ -54,7 +56,7 @@ class SignInForm extends StatelessWidget {
                   onChanged: (value) => context
                       .read<SignInFormBloc>()
                       .add(SignInFormEvent.emailChanged(value)),
-                  validator: (_) => context
+                  validator: (_) => toggle ? context
                       .read<SignInFormBloc>()
                       .state
                       .emailAddress
@@ -64,10 +66,11 @@ class SignInForm extends StatelessWidget {
                                 invalidEmail: (_) => 'Invalid Email',
                                 orElse: () => null,
                               ),
-                          (_) => null),
+                          (_) => null) : null,
                 ),
                 const SizedBox(height: 8),
                 TextFormField(
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
                   decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.lock),
                     labelText: 'Password',
@@ -77,13 +80,13 @@ class SignInForm extends StatelessWidget {
                   onChanged: (value) => context
                       .read<SignInFormBloc>()
                       .add(SignInFormEvent.passwordChanged(value)),
-                  validator: (_) =>
+                  validator: (_) => toggle ?
                       context.read<SignInFormBloc>().state.password.value.fold(
                           (f) => f.maybeMap(
                                 shortPassword: (_) => 'Short Password',
                                 orElse: () => null,
                               ),
-                          (_) => null),
+                          (_) => null) : null,
                 ),
                 const SizedBox(height: 8),
                 Row(

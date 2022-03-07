@@ -1,5 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
+import 'package:pillbase_flutter_app/domain/pills/i_pill_repository.dart';
+import 'package:pillbase_flutter_app/infrastructure/pills/pill_repository.dart';
 
 import 'application/auth/bloc/auth_bloc.dart';
 import 'application/auth/sign_in_form/sign_in_form_bloc.dart';
@@ -13,7 +16,7 @@ Future<void> init() async {
   //FEATURES - Pills
   //Application
   sl.registerFactory<PillFormBloc>(
-    () => PillFormBloc(),
+    () => PillFormBloc(pillRepository: sl()),
   );
 
   //FEATURES - Auth
@@ -35,8 +38,16 @@ Future<void> init() async {
     ),
   );
 
+  sl.registerLazySingleton<IPillRepository>(
+    () => PillRepository(firestore: sl()),
+  );
+
   //External
   sl.registerLazySingleton<FirebaseAuth>(
     () => FirebaseAuth.instance,
+  );
+
+  sl.registerLazySingleton<FirebaseFirestore>(
+    () => FirebaseFirestore.instance,
   );
 }

@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pillbase_flutter_app/application/auth/bloc/auth_bloc.dart';
-import 'package:pillbase_flutter_app/presentation/sign_in/sign_in_page.dart';
+import '../../application/auth/bloc/auth_bloc.dart';
+import '../sign_in/sign_in_page.dart';
 import '../../application/pill_for/pill_form_bloc.dart';
 import 'package:provider/provider.dart';
 
@@ -10,6 +10,7 @@ import '../../../injection.dart';
 
 import '../../../domain/pills/pill.dart';
 import 'widgets/pill_data_body.dart';
+import 'widgets/time_button_widget.dart';
 
 class PillFormPage extends StatelessWidget {
   static const routeName = '/pill-form-page';
@@ -45,7 +46,7 @@ class PillFormPage extends StatelessWidget {
           builder: (context, state) {
             return Stack(
               children: [
-                const NoteFormPageScaffold(),
+                NoteFormPageScaffold(),
                 SavingInProgressOverlay(isSaving: state.isSaving)
               ],
             );
@@ -100,6 +101,7 @@ class NoteFormPageScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     final Pill? editedPill =
         ModalRoute.of(context)?.settings.arguments as Pill?;
 
@@ -143,17 +145,22 @@ class NoteFormPageScaffold extends StatelessWidget {
               buildWhen: (p, c) => p.showErrorMessage != c.showErrorMessage,
               builder: (context, state) {
                 return Form(
-                  autovalidate: state.showErrorMessage,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
                   child: SingleChildScrollView(
                     child: Column(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
-                        const PillDataBody(),
+                        SizedBox(height: size.height * 0.1, width: size.width),
+                        PillDataBody(),
+                        SizedBox(height: size.height * 0.05, width: size.width),
+                        const TimeButton(),
                         TextButton(
-                          child: const Text('Save'),
-                          onPressed: () => context
-                              .read<PillFormBloc>()
-                              .add(const PillFormEvent.saved()),
-                        ),
+                            child: const Text('Save'),
+                            onPressed: () {
+                              context
+                                  .read<PillFormBloc>()
+                                  .add(const PillFormEvent.saved());
+                            }),
                       ],
                     ),
                   ),

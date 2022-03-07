@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pillbase_flutter_app/application/auth/bloc/auth_bloc.dart';
-import 'package:pillbase_flutter_app/presentation/pill_form/pill_form_page.dart';
-import 'package:pillbase_flutter_app/presentation/sign_in/sign_in_page.dart';
+import '../../application/auth/bloc/auth_bloc.dart';
+import '../pill_form/pill_form_page.dart';
+import '../sign_in/sign_in_page.dart';
 import 'package:provider/src/provider.dart';
 
 import '../../../injection.dart';

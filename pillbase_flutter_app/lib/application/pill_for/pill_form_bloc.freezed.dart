@@ -33,6 +33,24 @@ class _$PillFormEventTearOff {
   _Saved saved() {
     return const _Saved();
   }
+
+  _PillNumberChanged pillNumberChanged(String pillNumber) {
+    return _PillNumberChanged(
+      pillNumber,
+    );
+  }
+
+  _PillUnitChanged pillUnitChanged(String pillUnit) {
+    return _PillUnitChanged(
+      pillUnit,
+    );
+  }
+
+  _TimeChanged timeChanged(DateTime timeOfDay) {
+    return _TimeChanged(
+      timeOfDay,
+    );
+  }
 }
 
 /// @nodoc
@@ -45,6 +63,9 @@ mixin _$PillFormEvent {
     required TResult Function(String pillName) pillNameChanged,
     required TResult Function(Option<Pill> initialPillOption) initialized,
     required TResult Function() saved,
+    required TResult Function(String pillNumber) pillNumberChanged,
+    required TResult Function(String pillUnit) pillUnitChanged,
+    required TResult Function(DateTime timeOfDay) timeChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,6 +73,9 @@ mixin _$PillFormEvent {
     TResult Function(String pillName)? pillNameChanged,
     TResult Function(Option<Pill> initialPillOption)? initialized,
     TResult Function()? saved,
+    TResult Function(String pillNumber)? pillNumberChanged,
+    TResult Function(String pillUnit)? pillUnitChanged,
+    TResult Function(DateTime timeOfDay)? timeChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,6 +83,9 @@ mixin _$PillFormEvent {
     TResult Function(String pillName)? pillNameChanged,
     TResult Function(Option<Pill> initialPillOption)? initialized,
     TResult Function()? saved,
+    TResult Function(String pillNumber)? pillNumberChanged,
+    TResult Function(String pillUnit)? pillUnitChanged,
+    TResult Function(DateTime timeOfDay)? timeChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -67,6 +94,9 @@ mixin _$PillFormEvent {
     required TResult Function(_PillNameChanged value) pillNameChanged,
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_Saved value) saved,
+    required TResult Function(_PillNumberChanged value) pillNumberChanged,
+    required TResult Function(_PillUnitChanged value) pillUnitChanged,
+    required TResult Function(_TimeChanged value) timeChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -74,6 +104,9 @@ mixin _$PillFormEvent {
     TResult Function(_PillNameChanged value)? pillNameChanged,
     TResult Function(_Initialized value)? initialized,
     TResult Function(_Saved value)? saved,
+    TResult Function(_PillNumberChanged value)? pillNumberChanged,
+    TResult Function(_PillUnitChanged value)? pillUnitChanged,
+    TResult Function(_TimeChanged value)? timeChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,6 +114,9 @@ mixin _$PillFormEvent {
     TResult Function(_PillNameChanged value)? pillNameChanged,
     TResult Function(_Initialized value)? initialized,
     TResult Function(_Saved value)? saved,
+    TResult Function(_PillNumberChanged value)? pillNumberChanged,
+    TResult Function(_PillUnitChanged value)? pillUnitChanged,
+    TResult Function(_TimeChanged value)? timeChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -171,6 +207,9 @@ class _$_PillNameChanged implements _PillNameChanged {
     required TResult Function(String pillName) pillNameChanged,
     required TResult Function(Option<Pill> initialPillOption) initialized,
     required TResult Function() saved,
+    required TResult Function(String pillNumber) pillNumberChanged,
+    required TResult Function(String pillUnit) pillUnitChanged,
+    required TResult Function(DateTime timeOfDay) timeChanged,
   }) {
     return pillNameChanged(pillName);
   }
@@ -181,6 +220,9 @@ class _$_PillNameChanged implements _PillNameChanged {
     TResult Function(String pillName)? pillNameChanged,
     TResult Function(Option<Pill> initialPillOption)? initialized,
     TResult Function()? saved,
+    TResult Function(String pillNumber)? pillNumberChanged,
+    TResult Function(String pillUnit)? pillUnitChanged,
+    TResult Function(DateTime timeOfDay)? timeChanged,
   }) {
     return pillNameChanged?.call(pillName);
   }
@@ -191,6 +233,9 @@ class _$_PillNameChanged implements _PillNameChanged {
     TResult Function(String pillName)? pillNameChanged,
     TResult Function(Option<Pill> initialPillOption)? initialized,
     TResult Function()? saved,
+    TResult Function(String pillNumber)? pillNumberChanged,
+    TResult Function(String pillUnit)? pillUnitChanged,
+    TResult Function(DateTime timeOfDay)? timeChanged,
     required TResult orElse(),
   }) {
     if (pillNameChanged != null) {
@@ -205,6 +250,9 @@ class _$_PillNameChanged implements _PillNameChanged {
     required TResult Function(_PillNameChanged value) pillNameChanged,
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_Saved value) saved,
+    required TResult Function(_PillNumberChanged value) pillNumberChanged,
+    required TResult Function(_PillUnitChanged value) pillUnitChanged,
+    required TResult Function(_TimeChanged value) timeChanged,
   }) {
     return pillNameChanged(this);
   }
@@ -215,6 +263,9 @@ class _$_PillNameChanged implements _PillNameChanged {
     TResult Function(_PillNameChanged value)? pillNameChanged,
     TResult Function(_Initialized value)? initialized,
     TResult Function(_Saved value)? saved,
+    TResult Function(_PillNumberChanged value)? pillNumberChanged,
+    TResult Function(_PillUnitChanged value)? pillUnitChanged,
+    TResult Function(_TimeChanged value)? timeChanged,
   }) {
     return pillNameChanged?.call(this);
   }
@@ -225,6 +276,9 @@ class _$_PillNameChanged implements _PillNameChanged {
     TResult Function(_PillNameChanged value)? pillNameChanged,
     TResult Function(_Initialized value)? initialized,
     TResult Function(_Saved value)? saved,
+    TResult Function(_PillNumberChanged value)? pillNumberChanged,
+    TResult Function(_PillUnitChanged value)? pillUnitChanged,
+    TResult Function(_TimeChanged value)? timeChanged,
     required TResult orElse(),
   }) {
     if (pillNameChanged != null) {
@@ -311,6 +365,9 @@ class _$_Initialized implements _Initialized {
     required TResult Function(String pillName) pillNameChanged,
     required TResult Function(Option<Pill> initialPillOption) initialized,
     required TResult Function() saved,
+    required TResult Function(String pillNumber) pillNumberChanged,
+    required TResult Function(String pillUnit) pillUnitChanged,
+    required TResult Function(DateTime timeOfDay) timeChanged,
   }) {
     return initialized(initialPillOption);
   }
@@ -321,6 +378,9 @@ class _$_Initialized implements _Initialized {
     TResult Function(String pillName)? pillNameChanged,
     TResult Function(Option<Pill> initialPillOption)? initialized,
     TResult Function()? saved,
+    TResult Function(String pillNumber)? pillNumberChanged,
+    TResult Function(String pillUnit)? pillUnitChanged,
+    TResult Function(DateTime timeOfDay)? timeChanged,
   }) {
     return initialized?.call(initialPillOption);
   }
@@ -331,6 +391,9 @@ class _$_Initialized implements _Initialized {
     TResult Function(String pillName)? pillNameChanged,
     TResult Function(Option<Pill> initialPillOption)? initialized,
     TResult Function()? saved,
+    TResult Function(String pillNumber)? pillNumberChanged,
+    TResult Function(String pillUnit)? pillUnitChanged,
+    TResult Function(DateTime timeOfDay)? timeChanged,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -345,6 +408,9 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_PillNameChanged value) pillNameChanged,
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_Saved value) saved,
+    required TResult Function(_PillNumberChanged value) pillNumberChanged,
+    required TResult Function(_PillUnitChanged value) pillUnitChanged,
+    required TResult Function(_TimeChanged value) timeChanged,
   }) {
     return initialized(this);
   }
@@ -355,6 +421,9 @@ class _$_Initialized implements _Initialized {
     TResult Function(_PillNameChanged value)? pillNameChanged,
     TResult Function(_Initialized value)? initialized,
     TResult Function(_Saved value)? saved,
+    TResult Function(_PillNumberChanged value)? pillNumberChanged,
+    TResult Function(_PillUnitChanged value)? pillUnitChanged,
+    TResult Function(_TimeChanged value)? timeChanged,
   }) {
     return initialized?.call(this);
   }
@@ -365,6 +434,9 @@ class _$_Initialized implements _Initialized {
     TResult Function(_PillNameChanged value)? pillNameChanged,
     TResult Function(_Initialized value)? initialized,
     TResult Function(_Saved value)? saved,
+    TResult Function(_PillNumberChanged value)? pillNumberChanged,
+    TResult Function(_PillUnitChanged value)? pillUnitChanged,
+    TResult Function(_TimeChanged value)? timeChanged,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -424,6 +496,9 @@ class _$_Saved implements _Saved {
     required TResult Function(String pillName) pillNameChanged,
     required TResult Function(Option<Pill> initialPillOption) initialized,
     required TResult Function() saved,
+    required TResult Function(String pillNumber) pillNumberChanged,
+    required TResult Function(String pillUnit) pillUnitChanged,
+    required TResult Function(DateTime timeOfDay) timeChanged,
   }) {
     return saved();
   }
@@ -434,6 +509,9 @@ class _$_Saved implements _Saved {
     TResult Function(String pillName)? pillNameChanged,
     TResult Function(Option<Pill> initialPillOption)? initialized,
     TResult Function()? saved,
+    TResult Function(String pillNumber)? pillNumberChanged,
+    TResult Function(String pillUnit)? pillUnitChanged,
+    TResult Function(DateTime timeOfDay)? timeChanged,
   }) {
     return saved?.call();
   }
@@ -444,6 +522,9 @@ class _$_Saved implements _Saved {
     TResult Function(String pillName)? pillNameChanged,
     TResult Function(Option<Pill> initialPillOption)? initialized,
     TResult Function()? saved,
+    TResult Function(String pillNumber)? pillNumberChanged,
+    TResult Function(String pillUnit)? pillUnitChanged,
+    TResult Function(DateTime timeOfDay)? timeChanged,
     required TResult orElse(),
   }) {
     if (saved != null) {
@@ -458,6 +539,9 @@ class _$_Saved implements _Saved {
     required TResult Function(_PillNameChanged value) pillNameChanged,
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_Saved value) saved,
+    required TResult Function(_PillNumberChanged value) pillNumberChanged,
+    required TResult Function(_PillUnitChanged value) pillUnitChanged,
+    required TResult Function(_TimeChanged value) timeChanged,
   }) {
     return saved(this);
   }
@@ -468,6 +552,9 @@ class _$_Saved implements _Saved {
     TResult Function(_PillNameChanged value)? pillNameChanged,
     TResult Function(_Initialized value)? initialized,
     TResult Function(_Saved value)? saved,
+    TResult Function(_PillNumberChanged value)? pillNumberChanged,
+    TResult Function(_PillUnitChanged value)? pillUnitChanged,
+    TResult Function(_TimeChanged value)? timeChanged,
   }) {
     return saved?.call(this);
   }
@@ -478,6 +565,9 @@ class _$_Saved implements _Saved {
     TResult Function(_PillNameChanged value)? pillNameChanged,
     TResult Function(_Initialized value)? initialized,
     TResult Function(_Saved value)? saved,
+    TResult Function(_PillNumberChanged value)? pillNumberChanged,
+    TResult Function(_PillUnitChanged value)? pillUnitChanged,
+    TResult Function(_TimeChanged value)? timeChanged,
     required TResult orElse(),
   }) {
     if (saved != null) {
@@ -489,6 +579,480 @@ class _$_Saved implements _Saved {
 
 abstract class _Saved implements PillFormEvent {
   const factory _Saved() = _$_Saved;
+}
+
+/// @nodoc
+abstract class _$PillNumberChangedCopyWith<$Res> {
+  factory _$PillNumberChangedCopyWith(
+          _PillNumberChanged value, $Res Function(_PillNumberChanged) then) =
+      __$PillNumberChangedCopyWithImpl<$Res>;
+  $Res call({String pillNumber});
+}
+
+/// @nodoc
+class __$PillNumberChangedCopyWithImpl<$Res>
+    extends _$PillFormEventCopyWithImpl<$Res>
+    implements _$PillNumberChangedCopyWith<$Res> {
+  __$PillNumberChangedCopyWithImpl(
+      _PillNumberChanged _value, $Res Function(_PillNumberChanged) _then)
+      : super(_value, (v) => _then(v as _PillNumberChanged));
+
+  @override
+  _PillNumberChanged get _value => super._value as _PillNumberChanged;
+
+  @override
+  $Res call({
+    Object? pillNumber = freezed,
+  }) {
+    return _then(_PillNumberChanged(
+      pillNumber == freezed
+          ? _value.pillNumber
+          : pillNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PillNumberChanged implements _PillNumberChanged {
+  const _$_PillNumberChanged(this.pillNumber);
+
+  @override
+  final String pillNumber;
+
+  @override
+  String toString() {
+    return 'PillFormEvent.pillNumberChanged(pillNumber: $pillNumber)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _PillNumberChanged &&
+            const DeepCollectionEquality()
+                .equals(other.pillNumber, pillNumber));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(pillNumber));
+
+  @JsonKey(ignore: true)
+  @override
+  _$PillNumberChangedCopyWith<_PillNumberChanged> get copyWith =>
+      __$PillNumberChangedCopyWithImpl<_PillNumberChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pillName) pillNameChanged,
+    required TResult Function(Option<Pill> initialPillOption) initialized,
+    required TResult Function() saved,
+    required TResult Function(String pillNumber) pillNumberChanged,
+    required TResult Function(String pillUnit) pillUnitChanged,
+    required TResult Function(DateTime timeOfDay) timeChanged,
+  }) {
+    return pillNumberChanged(pillNumber);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String pillName)? pillNameChanged,
+    TResult Function(Option<Pill> initialPillOption)? initialized,
+    TResult Function()? saved,
+    TResult Function(String pillNumber)? pillNumberChanged,
+    TResult Function(String pillUnit)? pillUnitChanged,
+    TResult Function(DateTime timeOfDay)? timeChanged,
+  }) {
+    return pillNumberChanged?.call(pillNumber);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pillName)? pillNameChanged,
+    TResult Function(Option<Pill> initialPillOption)? initialized,
+    TResult Function()? saved,
+    TResult Function(String pillNumber)? pillNumberChanged,
+    TResult Function(String pillUnit)? pillUnitChanged,
+    TResult Function(DateTime timeOfDay)? timeChanged,
+    required TResult orElse(),
+  }) {
+    if (pillNumberChanged != null) {
+      return pillNumberChanged(pillNumber);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PillNameChanged value) pillNameChanged,
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_Saved value) saved,
+    required TResult Function(_PillNumberChanged value) pillNumberChanged,
+    required TResult Function(_PillUnitChanged value) pillUnitChanged,
+    required TResult Function(_TimeChanged value) timeChanged,
+  }) {
+    return pillNumberChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_PillNameChanged value)? pillNameChanged,
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Saved value)? saved,
+    TResult Function(_PillNumberChanged value)? pillNumberChanged,
+    TResult Function(_PillUnitChanged value)? pillUnitChanged,
+    TResult Function(_TimeChanged value)? timeChanged,
+  }) {
+    return pillNumberChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PillNameChanged value)? pillNameChanged,
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Saved value)? saved,
+    TResult Function(_PillNumberChanged value)? pillNumberChanged,
+    TResult Function(_PillUnitChanged value)? pillUnitChanged,
+    TResult Function(_TimeChanged value)? timeChanged,
+    required TResult orElse(),
+  }) {
+    if (pillNumberChanged != null) {
+      return pillNumberChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PillNumberChanged implements PillFormEvent {
+  const factory _PillNumberChanged(String pillNumber) = _$_PillNumberChanged;
+
+  String get pillNumber;
+  @JsonKey(ignore: true)
+  _$PillNumberChangedCopyWith<_PillNumberChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$PillUnitChangedCopyWith<$Res> {
+  factory _$PillUnitChangedCopyWith(
+          _PillUnitChanged value, $Res Function(_PillUnitChanged) then) =
+      __$PillUnitChangedCopyWithImpl<$Res>;
+  $Res call({String pillUnit});
+}
+
+/// @nodoc
+class __$PillUnitChangedCopyWithImpl<$Res>
+    extends _$PillFormEventCopyWithImpl<$Res>
+    implements _$PillUnitChangedCopyWith<$Res> {
+  __$PillUnitChangedCopyWithImpl(
+      _PillUnitChanged _value, $Res Function(_PillUnitChanged) _then)
+      : super(_value, (v) => _then(v as _PillUnitChanged));
+
+  @override
+  _PillUnitChanged get _value => super._value as _PillUnitChanged;
+
+  @override
+  $Res call({
+    Object? pillUnit = freezed,
+  }) {
+    return _then(_PillUnitChanged(
+      pillUnit == freezed
+          ? _value.pillUnit
+          : pillUnit // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PillUnitChanged implements _PillUnitChanged {
+  const _$_PillUnitChanged(this.pillUnit);
+
+  @override
+  final String pillUnit;
+
+  @override
+  String toString() {
+    return 'PillFormEvent.pillUnitChanged(pillUnit: $pillUnit)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _PillUnitChanged &&
+            const DeepCollectionEquality().equals(other.pillUnit, pillUnit));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(pillUnit));
+
+  @JsonKey(ignore: true)
+  @override
+  _$PillUnitChangedCopyWith<_PillUnitChanged> get copyWith =>
+      __$PillUnitChangedCopyWithImpl<_PillUnitChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pillName) pillNameChanged,
+    required TResult Function(Option<Pill> initialPillOption) initialized,
+    required TResult Function() saved,
+    required TResult Function(String pillNumber) pillNumberChanged,
+    required TResult Function(String pillUnit) pillUnitChanged,
+    required TResult Function(DateTime timeOfDay) timeChanged,
+  }) {
+    return pillUnitChanged(pillUnit);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String pillName)? pillNameChanged,
+    TResult Function(Option<Pill> initialPillOption)? initialized,
+    TResult Function()? saved,
+    TResult Function(String pillNumber)? pillNumberChanged,
+    TResult Function(String pillUnit)? pillUnitChanged,
+    TResult Function(DateTime timeOfDay)? timeChanged,
+  }) {
+    return pillUnitChanged?.call(pillUnit);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pillName)? pillNameChanged,
+    TResult Function(Option<Pill> initialPillOption)? initialized,
+    TResult Function()? saved,
+    TResult Function(String pillNumber)? pillNumberChanged,
+    TResult Function(String pillUnit)? pillUnitChanged,
+    TResult Function(DateTime timeOfDay)? timeChanged,
+    required TResult orElse(),
+  }) {
+    if (pillUnitChanged != null) {
+      return pillUnitChanged(pillUnit);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PillNameChanged value) pillNameChanged,
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_Saved value) saved,
+    required TResult Function(_PillNumberChanged value) pillNumberChanged,
+    required TResult Function(_PillUnitChanged value) pillUnitChanged,
+    required TResult Function(_TimeChanged value) timeChanged,
+  }) {
+    return pillUnitChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_PillNameChanged value)? pillNameChanged,
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Saved value)? saved,
+    TResult Function(_PillNumberChanged value)? pillNumberChanged,
+    TResult Function(_PillUnitChanged value)? pillUnitChanged,
+    TResult Function(_TimeChanged value)? timeChanged,
+  }) {
+    return pillUnitChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PillNameChanged value)? pillNameChanged,
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Saved value)? saved,
+    TResult Function(_PillNumberChanged value)? pillNumberChanged,
+    TResult Function(_PillUnitChanged value)? pillUnitChanged,
+    TResult Function(_TimeChanged value)? timeChanged,
+    required TResult orElse(),
+  }) {
+    if (pillUnitChanged != null) {
+      return pillUnitChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PillUnitChanged implements PillFormEvent {
+  const factory _PillUnitChanged(String pillUnit) = _$_PillUnitChanged;
+
+  String get pillUnit;
+  @JsonKey(ignore: true)
+  _$PillUnitChangedCopyWith<_PillUnitChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$TimeChangedCopyWith<$Res> {
+  factory _$TimeChangedCopyWith(
+          _TimeChanged value, $Res Function(_TimeChanged) then) =
+      __$TimeChangedCopyWithImpl<$Res>;
+  $Res call({DateTime timeOfDay});
+}
+
+/// @nodoc
+class __$TimeChangedCopyWithImpl<$Res> extends _$PillFormEventCopyWithImpl<$Res>
+    implements _$TimeChangedCopyWith<$Res> {
+  __$TimeChangedCopyWithImpl(
+      _TimeChanged _value, $Res Function(_TimeChanged) _then)
+      : super(_value, (v) => _then(v as _TimeChanged));
+
+  @override
+  _TimeChanged get _value => super._value as _TimeChanged;
+
+  @override
+  $Res call({
+    Object? timeOfDay = freezed,
+  }) {
+    return _then(_TimeChanged(
+      timeOfDay == freezed
+          ? _value.timeOfDay
+          : timeOfDay // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_TimeChanged implements _TimeChanged {
+  const _$_TimeChanged(this.timeOfDay);
+
+  @override
+  final DateTime timeOfDay;
+
+  @override
+  String toString() {
+    return 'PillFormEvent.timeChanged(timeOfDay: $timeOfDay)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _TimeChanged &&
+            const DeepCollectionEquality().equals(other.timeOfDay, timeOfDay));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(timeOfDay));
+
+  @JsonKey(ignore: true)
+  @override
+  _$TimeChangedCopyWith<_TimeChanged> get copyWith =>
+      __$TimeChangedCopyWithImpl<_TimeChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pillName) pillNameChanged,
+    required TResult Function(Option<Pill> initialPillOption) initialized,
+    required TResult Function() saved,
+    required TResult Function(String pillNumber) pillNumberChanged,
+    required TResult Function(String pillUnit) pillUnitChanged,
+    required TResult Function(DateTime timeOfDay) timeChanged,
+  }) {
+    return timeChanged(timeOfDay);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String pillName)? pillNameChanged,
+    TResult Function(Option<Pill> initialPillOption)? initialized,
+    TResult Function()? saved,
+    TResult Function(String pillNumber)? pillNumberChanged,
+    TResult Function(String pillUnit)? pillUnitChanged,
+    TResult Function(DateTime timeOfDay)? timeChanged,
+  }) {
+    return timeChanged?.call(timeOfDay);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pillName)? pillNameChanged,
+    TResult Function(Option<Pill> initialPillOption)? initialized,
+    TResult Function()? saved,
+    TResult Function(String pillNumber)? pillNumberChanged,
+    TResult Function(String pillUnit)? pillUnitChanged,
+    TResult Function(DateTime timeOfDay)? timeChanged,
+    required TResult orElse(),
+  }) {
+    if (timeChanged != null) {
+      return timeChanged(timeOfDay);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PillNameChanged value) pillNameChanged,
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_Saved value) saved,
+    required TResult Function(_PillNumberChanged value) pillNumberChanged,
+    required TResult Function(_PillUnitChanged value) pillUnitChanged,
+    required TResult Function(_TimeChanged value) timeChanged,
+  }) {
+    return timeChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_PillNameChanged value)? pillNameChanged,
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Saved value)? saved,
+    TResult Function(_PillNumberChanged value)? pillNumberChanged,
+    TResult Function(_PillUnitChanged value)? pillUnitChanged,
+    TResult Function(_TimeChanged value)? timeChanged,
+  }) {
+    return timeChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PillNameChanged value)? pillNameChanged,
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Saved value)? saved,
+    TResult Function(_PillNumberChanged value)? pillNumberChanged,
+    TResult Function(_PillUnitChanged value)? pillUnitChanged,
+    TResult Function(_TimeChanged value)? timeChanged,
+    required TResult orElse(),
+  }) {
+    if (timeChanged != null) {
+      return timeChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _TimeChanged implements PillFormEvent {
+  const factory _TimeChanged(DateTime timeOfDay) = _$_TimeChanged;
+
+  DateTime get timeOfDay;
+  @JsonKey(ignore: true)
+  _$TimeChangedCopyWith<_TimeChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

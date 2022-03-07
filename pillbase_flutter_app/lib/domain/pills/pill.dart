@@ -11,17 +11,26 @@ part 'pill.freezed.dart';
 abstract class Pill implements _$Pill {
   const Pill._();
 
-  const factory Pill(
-      {required UniqueId id,
-      required PillName pillName,}) = _Pill;
+  const factory Pill({
+    required UniqueId id,
+    required PillName pillName,
+    required PillNumber pillNumber,
+    required PillUnit pillUnit,
+    required PillNotificationTimeOfDay timeOfDay,
+  }) = _Pill;
 
   factory Pill.empty() => Pill(
         id: UniqueId(),
         pillName: PillName(''),
+        pillNumber: PillNumber(''),
+        pillUnit: PillUnit(''),
+        timeOfDay: PillNotificationTimeOfDay(DateTime.now()),
       );
 
   Option<ValueFailure<dynamic>> get failureOption {
     return pillName.failureOrUnit
+        .andThen(pillUnit.failureOrUnit)
+        .andThen(pillNumber.failureOrUnit)
         .fold((l) => some(l), (r) => none());
   }
 }

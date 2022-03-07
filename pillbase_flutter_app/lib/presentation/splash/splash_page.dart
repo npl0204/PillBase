@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pillbase_flutter_app/application/auth/bloc/auth_bloc.dart';
-import 'package:pillbase_flutter_app/presentation/pill_form/pill_form_page.dart';
-import 'package:pillbase_flutter_app/presentation/pill_overview/pill_overview_page.dart';
+import '../../application/auth/bloc/auth_bloc.dart';
+import '../main/main_page.dart';
 
-
-import '../sign_in/sign_in_page.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -20,13 +17,13 @@ class SplashPage extends StatelessWidget {
           authenticated: (_) {
             Navigator.pushReplacementNamed(
               context,
-              PillsOverviewPage.routeName,
+              MainPage.routeName,
             );
           },
           unauthenticated: (_) {
             Navigator.pushReplacementNamed(
               context,
-              SignInPage.routeName,
+              MainPage.routeName,
             );
           },
         );
