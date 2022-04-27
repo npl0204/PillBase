@@ -16,7 +16,7 @@ class AppBarTitle extends StatelessWidget {
           color: Colors.teal[50],
         ),
         */
-        Text('GreenThumbs'),
+        Text('Notification'),
       ],
     );
   }
@@ -63,3 +63,5 @@ class HomePageButtons extends StatelessWidget {
     );
   }
 }
+
+// referenced from ashndev 
