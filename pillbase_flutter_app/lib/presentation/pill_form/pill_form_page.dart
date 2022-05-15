@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../application/auth/bloc/auth_bloc.dart';
 import '../sign_in/sign_in_page.dart';
-import '../../application/pill_for/pill_form_bloc.dart';
+import '../../application/pills/pill_form/pill_form_bloc.dart';
 import 'package:provider/provider.dart';
 
 import '../../../injection.dart';
@@ -151,7 +151,7 @@ class NoteFormPageScaffold extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         SizedBox(height: size.height * 0.1, width: size.width),
-                        PillDataBody(),
+                        const PillDataBody(),
                         SizedBox(height: size.height * 0.05, width: size.width),
                         const TimeButton(),
                         TextButton(

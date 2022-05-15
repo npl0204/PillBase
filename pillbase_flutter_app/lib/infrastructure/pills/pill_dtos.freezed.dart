@@ -23,13 +23,13 @@ class _$PillDtoTearOff {
   const _$PillDtoTearOff();
 
   _PillDto call(
-      {@JsonKey(ignore: true) String? id,
+      {@JsonKey(ignore: true) String? pillId,
       required String pillName,
       required int pillNumber,
       required String pillUnit,
       required DateTime timeOfDay}) {
     return _PillDto(
-      id: id,
+      pillId: pillId,
       pillName: pillName,
       pillNumber: pillNumber,
       pillUnit: pillUnit,
@@ -48,7 +48,7 @@ const $PillDto = _$PillDtoTearOff();
 /// @nodoc
 mixin _$PillDto {
   @JsonKey(ignore: true)
-  String? get id => throw _privateConstructorUsedError;
+  String? get pillId => throw _privateConstructorUsedError;
   String get pillName => throw _privateConstructorUsedError;
   int get pillNumber => throw _privateConstructorUsedError;
   String get pillUnit => throw _privateConstructorUsedError;
@@ -64,7 +64,7 @@ abstract class $PillDtoCopyWith<$Res> {
   factory $PillDtoCopyWith(PillDto value, $Res Function(PillDto) then) =
       _$PillDtoCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(ignore: true) String? id,
+      {@JsonKey(ignore: true) String? pillId,
       String pillName,
       int pillNumber,
       String pillUnit,
@@ -81,16 +81,16 @@ class _$PillDtoCopyWithImpl<$Res> implements $PillDtoCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? id = freezed,
+    Object? pillId = freezed,
     Object? pillName = freezed,
     Object? pillNumber = freezed,
     Object? pillUnit = freezed,
     Object? timeOfDay = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
+      pillId: pillId == freezed
+          ? _value.pillId
+          : pillId // ignore: cast_nullable_to_non_nullable
               as String?,
       pillName: pillName == freezed
           ? _value.pillName
@@ -118,7 +118,7 @@ abstract class _$PillDtoCopyWith<$Res> implements $PillDtoCopyWith<$Res> {
       __$PillDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(ignore: true) String? id,
+      {@JsonKey(ignore: true) String? pillId,
       String pillName,
       int pillNumber,
       String pillUnit,
@@ -136,16 +136,16 @@ class __$PillDtoCopyWithImpl<$Res> extends _$PillDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? id = freezed,
+    Object? pillId = freezed,
     Object? pillName = freezed,
     Object? pillNumber = freezed,
     Object? pillUnit = freezed,
     Object? timeOfDay = freezed,
   }) {
     return _then(_PillDto(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
+      pillId: pillId == freezed
+          ? _value.pillId
+          : pillId // ignore: cast_nullable_to_non_nullable
               as String?,
       pillName: pillName == freezed
           ? _value.pillName
@@ -171,7 +171,7 @@ class __$PillDtoCopyWithImpl<$Res> extends _$PillDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_PillDto extends _PillDto {
   const _$_PillDto(
-      {@JsonKey(ignore: true) this.id,
+      {@JsonKey(ignore: true) this.pillId,
       required this.pillName,
       required this.pillNumber,
       required this.pillUnit,
@@ -183,7 +183,7 @@ class _$_PillDto extends _PillDto {
 
   @override
   @JsonKey(ignore: true)
-  final String? id;
+  final String? pillId;
   @override
   final String pillName;
   @override
@@ -195,7 +195,7 @@ class _$_PillDto extends _PillDto {
 
   @override
   String toString() {
-    return 'PillDto(id: $id, pillName: $pillName, pillNumber: $pillNumber, pillUnit: $pillUnit, timeOfDay: $timeOfDay)';
+    return 'PillDto(pillId: $pillId, pillName: $pillName, pillNumber: $pillNumber, pillUnit: $pillUnit, timeOfDay: $timeOfDay)';
   }
 
   @override
@@ -203,7 +203,7 @@ class _$_PillDto extends _PillDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _PillDto &&
-            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.pillId, pillId) &&
             const DeepCollectionEquality().equals(other.pillName, pillName) &&
             const DeepCollectionEquality()
                 .equals(other.pillNumber, pillNumber) &&
@@ -214,7 +214,7 @@ class _$_PillDto extends _PillDto {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(pillId),
       const DeepCollectionEquality().hash(pillName),
       const DeepCollectionEquality().hash(pillNumber),
       const DeepCollectionEquality().hash(pillUnit),
@@ -233,7 +233,7 @@ class _$_PillDto extends _PillDto {
 
 abstract class _PillDto extends PillDto {
   const factory _PillDto(
-      {@JsonKey(ignore: true) String? id,
+      {@JsonKey(ignore: true) String? pillId,
       required String pillName,
       required int pillNumber,
       required String pillUnit,
@@ -244,7 +244,7 @@ abstract class _PillDto extends PillDto {
 
   @override
   @JsonKey(ignore: true)
-  String? get id;
+  String? get pillId;
   @override
   String get pillName;
   @override

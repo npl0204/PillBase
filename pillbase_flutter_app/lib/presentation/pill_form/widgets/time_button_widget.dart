@@ -2,7 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
 import 'package:flutter/material.dart';
-import '../../../application/pill_for/pill_form_bloc.dart';
+import '../../../application/pills/pill_form/pill_form_bloc.dart';
 import 'package:provider/src/provider.dart';
 
 class TimeButton extends StatefulWidget {
@@ -14,7 +14,7 @@ class TimeButton extends StatefulWidget {
 
 class _DateTimeButtonState extends State<TimeButton> {
   DateTime setDateTime = DateTime.now();
-  TimeOfDay _dateTime = TimeOfDay.now();
+  DateTime _dateTime = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +86,7 @@ class _DateTimeButtonState extends State<TimeButton> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  DateFormat(('MM/dd')).format(setDateTime),
+                  DateFormat(('MM/dd')).format(_dateTime),
                   style: const TextStyle(
                     fontSize: 32.0,
                     color: Colors.black,
@@ -111,7 +111,7 @@ class _DateTimeButtonState extends State<TimeButton> {
                   .then(
                 (value) {
                 
-                  setState(() => _dateTime = value as TimeOfDay);
+                  setState(() => _dateTime = value as DateTime);
                 },
               );
             },

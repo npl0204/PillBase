@@ -20,7 +20,7 @@ abstract class PillDto implements _$PillDto {
   const PillDto._();
 
   const factory PillDto({
-    @JsonKey(ignore: true) String? id,
+    @JsonKey(ignore: true) String? pillId,
     required String pillName,
     required int pillNumber,
     required String pillUnit,
@@ -29,7 +29,7 @@ abstract class PillDto implements _$PillDto {
 
   factory PillDto.fromDomain(Pill pill) {
     return PillDto(
-      id: pill.id.getOrCrash(),
+      pillId: pill.id.getOrCrash(),
       pillName: pill.pillName.getOrCrash(),
       pillNumber: int.parse(pill.pillNumber.getOrCrash()),
       pillUnit: pill.pillUnit.getOrCrash(),
@@ -39,7 +39,7 @@ abstract class PillDto implements _$PillDto {
 
   Pill toDomain() {
     return Pill(
-      id: UniqueId.fromUniqueString(id as String),
+      id: UniqueId.fromUniqueString(pillId as String),
       pillName: PillName(pillName),
       pillNumber: PillNumber(pillNumber.toString()),
       pillUnit: PillUnit(pillUnit),
@@ -51,5 +51,5 @@ abstract class PillDto implements _$PillDto {
       _$PillDtoFromJson(json);
 
   factory PillDto.fromFirestore(DocumentSnapshot doc) =>
-      PillDto.fromJson(doc.data() as Map<String, dynamic>).copyWith(id: doc.id);
+      PillDto.fromJson(doc.data() as Map<String, dynamic>).copyWith(pillId: doc.id);
 }

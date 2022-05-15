@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../application/auth/bloc/auth_bloc.dart';
-import '../pill_overview/pill_overview_page.dart';
+import '../pills_overview/pills_overview_page.dart';
 import '../sign_in/sign_in_page.dart';
 
 class MainPage extends StatefulWidget {
@@ -31,6 +31,8 @@ class _MainPageState extends State<MainPage> {
       PillsOverviewPage(),
     ];
 
+    print('hello');
+    
     return MultiBlocListener(
       listeners: [
         BlocListener<AuthBloc, AuthState>(listener: (context, state) {
