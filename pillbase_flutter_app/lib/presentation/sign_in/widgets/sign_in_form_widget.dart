@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../application/auth/bloc/auth_bloc.dart';
 import '../../../application/auth/sign_in_form/sign_in_form_bloc.dart';
-import '../../main/main_page.dart';
+import '../../home/home_page.dart';
 
 class SignInForm extends StatelessWidget {
   const SignInForm({Key? key}) : super(key: key);
@@ -31,7 +31,8 @@ class SignInForm extends StatelessWidget {
             (r) => {
               Navigator.pushReplacementNamed(
                 context,
-                MainPage.routeName,
+                HomePage.routeName,
+                // MainPage.routeName,
               ),
               context
                   .read<AuthBloc>()
@@ -48,11 +49,6 @@ class SignInForm extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: ListView(
               children: [
-                // const Text(
-                //   '📝',
-                //   style: TextStyle(fontSize: 140),
-                //   textAlign: TextAlign.center,
-                // ),
                 const SizedBox(height: 100),
                 Image.asset('assets/images/Logo.png',
                     height: size.height * 0.12),
@@ -92,6 +88,11 @@ class SignInForm extends StatelessWidget {
                   decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.lock),
                     labelText: 'Password',
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
+                      ),
+                    ),
                   ),
                   autocorrect: false,
                   obscureText: true,

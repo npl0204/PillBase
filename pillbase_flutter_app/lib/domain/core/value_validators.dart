@@ -44,6 +44,14 @@ Either<ValueFailure<String>, String> validatePillUnit(String input) {
   }
 }
 
+Either<ValueFailure<List<int>>, List<int>> validatePillNotificationDaysOfWeek(List<int> input) {
+  if (input.isNotEmpty) {
+    return right(input);
+  } else {
+    return left(const ValueFailure.noDayOfWeek());
+  }
+}
+
 Either<ValueFailure<DateTime>, DateTime> validatePillNotificationTimeOfDay(DateTime? input) {
   if (input != null) {
     return right(input);

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
+import '../../../domain/notifications/i_notification_repostiory.dart';
 import '../../../domain/pills/i_pill_repository.dart';
 import '../../../domain/pills/pill.dart';
 import '../../../domain/pills/pill_failure.dart';
@@ -13,10 +14,12 @@ part 'pill_watcher_bloc.freezed.dart';
 
 class PillWatcherBloc extends Bloc<PillWatcherEvent, PillWatcherState> {
   final IPillRepository pillRepository;
+  final INotificationRepository notificationRepository;
   StreamSubscription<Either<PillFailure, List<Pill>>>? _pillStreamSubscription;
 
   PillWatcherBloc({
     required this.pillRepository,
+    required this.notificationRepository,
   }) : super(const PillWatcherState.initial()) {
     on<PillWatcherEvent>(
       (event, emit) async {
@@ -34,14 +37,15 @@ class PillWatcherBloc extends Bloc<PillWatcherEvent, PillWatcherState> {
             });
           },
           pillsReceived: (e) async {
-            // print('hello');
-            // print(e.failureOrPills.fold((l) => '', (r) => r));
             e.failureOrPills.fold(
               (f) => emit(PillWatcherState.loadFailure(f)),
               (pills) {
                 emit(
                   PillWatcherState.loadSuccess(pills),
                 );
+                for (var i = 0; i < pills.length; i++) {
+                  notificationRepository.create(pills[i]);
+                }
               },
             );
           },

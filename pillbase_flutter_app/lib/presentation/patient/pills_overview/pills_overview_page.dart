@@ -1,13 +1,13 @@
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pillbase_flutter_app/presentation/pills_overview/widgets/pills_overview_body.dart';
-import '../../application/auth/bloc/auth_bloc.dart';
-import '../../application/pills/pill_actor/pill_actor_bloc.dart';
-import '../../application/pills/pill_watcher/pill_watcher_bloc.dart';
+import '../../../application/auth/bloc/auth_bloc.dart';
+import '../../../application/pills/pill_actor/pill_actor_bloc.dart';
+import '../../../application/pills/pill_watcher/pill_watcher_bloc.dart';
+import '../../../application/pills/pill_worker/pill_worker_bloc.dart';
 import '../pill_form/pill_form_page.dart';
-import '../sign_in/sign_in_page.dart';
-import 'package:provider/src/provider.dart';
+import 'widgets/pills_overview_body_widget.dart';
+import '../../sign_in/sign_in_page.dart';
 
 import '../../../injection.dart';
 
@@ -24,6 +24,7 @@ class PillsOverviewPage extends StatelessWidget {
             ..add(const PillWatcherEvent.watchAllStarted()),
         ),
         BlocProvider(create: (context) => sl<PillActorBloc>()),
+        BlocProvider(create: (context) => sl<PillWorkerBloc>()),
       ],
       child: MultiBlocListener(
         listeners: [
@@ -53,14 +54,13 @@ class PillsOverviewPage extends StatelessWidget {
         ],
         child: Scaffold(
           appBar: AppBar(
-            title: const Text('PillBase'),
+            shadowColor: Colors.transparent,
+            automaticallyImplyLeading: false,
             leading: IconButton(
-              icon: const Icon(Icons.exit_to_app),
-              onPressed: () {
-                context.read<AuthBloc>().add(
-                      const AuthEvent.signedOut(),
-                    );
-              },
+              onPressed: () => Navigator.of(context).pop(),
+              icon: const Icon(
+                Icons.arrow_back_ios_new_rounded,
+              ),
             ),
             actions: [
               IconButton(
@@ -70,6 +70,7 @@ class PillsOverviewPage extends StatelessWidget {
               ),
             ],
           ),
+          backgroundColor: Theme.of(context).primaryColor,
           body: const PillsOverviewBody(),
         ),
       ),

@@ -1,11 +1,11 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
-import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'application/pills/pill_worker/pill_worker_bloc.dart';
+import 'injection.dart';
 import 'presentation/core/app_widget.dart';
-import 'presentation/pill_form/pill_form_page.dart';
-
 import 'injection.dart' as di;
-import 'presentation/sign_in/sign_in_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,5 +24,8 @@ void main() async {
       ),
     ],
   );
-  runApp(const AppWidget());
+  runApp(BlocProvider(
+    create: (context) => sl<PillWorkerBloc>(),
+    child: const AppWidget(),
+  ));
 }

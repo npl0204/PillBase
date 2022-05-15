@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'pill_check_item.dart';
 import '../core/failures.dart';
 import '../core/value_objects.dart';
 import '../core/value_validators.dart';
@@ -36,6 +37,17 @@ class PillUnit extends ValueObject<String> {
   }
 }
 
+class PillNotificationDaysOfWeek extends ValueObject<List<int>> {
+  @override
+  final Either<ValueFailure<List<int>>, List<int>> value;
+
+  const PillNotificationDaysOfWeek._({required this.value});
+
+  factory PillNotificationDaysOfWeek(List<int> input) {
+    return PillNotificationDaysOfWeek._(value: validatePillNotificationDaysOfWeek(input));
+  }
+}
+
 class PillNotificationTimeOfDay extends ValueObject<DateTime> {
   @override
   final Either<ValueFailure<DateTime>, DateTime> value;
@@ -44,5 +56,16 @@ class PillNotificationTimeOfDay extends ValueObject<DateTime> {
 
   factory PillNotificationTimeOfDay(DateTime? input) {
     return PillNotificationTimeOfDay._(value: validatePillNotificationTimeOfDay(input));
+  }
+}
+
+class PillCheckItemsList extends ValueObject<List<PillCheckItem>> {
+  @override
+  final Either<ValueFailure<List<PillCheckItem>>, List<PillCheckItem>> value;
+
+  const PillCheckItemsList._({required this.value});
+
+  factory PillCheckItemsList(List<PillCheckItem> input) {
+    return PillCheckItemsList._(value: right(input));
   }
 }

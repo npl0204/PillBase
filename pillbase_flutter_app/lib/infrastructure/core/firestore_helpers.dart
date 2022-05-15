@@ -8,16 +8,20 @@ extension FirebaseFirestoreX on FirebaseFirestore {
   Future<DocumentReference> userDocument() async {
     final userOption = await sl<IAuthFacade>().getSignedInUser();
     final user = userOption.getOrElse(
-      () => throw UnauthenticatedError(),
+      () => throw NotAuthenticatedError(),
     );
     return FirebaseFirestore.instance.collection('patients').doc(
           user.id.getOrCrash(),
         );
   }
+
+  Future<CollectionReference<Map<String, dynamic>>> entryCollection() async {
+    return FirebaseFirestore.instance.collection('entries');
+  }
 }
 
 extension DocumentReferenceX on DocumentReference {
-  //this is basically so that we would not call .collection('notes') all the time
+  //this is basically so that we would not call .collection('pills') all the time
   //and just replace it with more concise .noteCollection
   CollectionReference get pillsCollection => collection('pills');
 }

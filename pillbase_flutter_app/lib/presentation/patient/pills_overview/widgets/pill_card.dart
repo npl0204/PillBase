@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import '../../../../application/pills/pill_actor/pill_actor_bloc.dart';
 import '../../../../domain/pills/pill.dart';
 import '../../pill_form/pill_form_page.dart';
+import '../../pill_overview/pill_overview_page.dart';
 
 class PillCard extends StatelessWidget {
   final Pill pill;
@@ -42,7 +43,12 @@ class PillCard extends StatelessWidget {
           ),
           color: Theme.of(context).colorScheme.secondary,
           child: GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pushNamed(
+                PillOverviewPage.routeName,
+                arguments: pill,
+              );
+            },
             child: Container(
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(
@@ -79,8 +85,7 @@ class PillCard extends StatelessWidget {
                             bottom: 10,
                           ),
                           child: Text(
-                            DateFormat("HH:mm")
-                                .format(pill.timeOfDay.getOrCrash()),
+                            DateFormat("HH:mm").format(pill.timeOfDay.getOrCrash()),
                             style: TextStyle(
                               color: textColor,
                               fontWeight: FontWeight.w400,

@@ -1,6 +1,8 @@
 import 'package:bloc/bloc.dart';
+import '../../../../domain/auth/i_auth_facade.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../../domain/auth/i_auth_facade.dart';
+
+import '../../../domain/notifications/i_notification_repostiory.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -8,8 +10,12 @@ part 'auth_bloc.freezed.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final IAuthFacade authFacade;
+  final INotificationRepository notificationRepository;
 
-  AuthBloc({required this.authFacade}) : super(_Initial()) {
+  AuthBloc({
+    required this.authFacade,
+    required this.notificationRepository,
+  }) : super(const AuthState.initial()) {
     on<AuthEvent>(
       (event, emit) async {
         await event.map(
@@ -23,6 +29,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             );
           },
           signedOut: (e) async {
+            notificationRepository.cancelAllNotifications();
             await authFacade.signOut();
             emit(
               const AuthState.unauthenticated(),

@@ -18,6 +18,18 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ValueFailureTearOff {
   const _$ValueFailureTearOff();
 
+  InvalidEmail<T> invalidEmail<T>({required T failedValue}) {
+    return InvalidEmail<T>(
+      failedValue: failedValue,
+    );
+  }
+
+  ShortPassword<T> shortPassword<T>({required T failedValue}) {
+    return ShortPassword<T>(
+      failedValue: failedValue,
+    );
+  }
+
   NoName<T> noName<T>() {
     return NoName<T>();
   }
@@ -30,20 +42,12 @@ class _$ValueFailureTearOff {
     return NoUnit<T>();
   }
 
+  NoDayOfWeek<T> noDayOfWeek<T>() {
+    return NoDayOfWeek<T>();
+  }
+
   NoTimeOfDay<T> noTimeOfDay<T>() {
     return NoTimeOfDay<T>();
-  }
-
-  InvalidEmail<T> invalidEmail<T>({required T failedValue}) {
-    return InvalidEmail<T>(
-      failedValue: failedValue,
-    );
-  }
-
-  ShortPassword<T> shortPassword<T>({required T failedValue}) {
-    return ShortPassword<T>(
-      failedValue: failedValue,
-    );
   }
 }
 
@@ -54,63 +58,69 @@ const $ValueFailure = _$ValueFailureTearOff();
 mixin _$ValueFailure<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
     required TResult Function() noName,
     required TResult Function() noNumber,
     required TResult Function() noUnit,
+    required TResult Function() noDayOfWeek,
     required TResult Function() noTimeOfDay,
-    required TResult Function(T failedValue) invalidEmail,
-    required TResult Function(T failedValue) shortPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
     TResult Function()? noName,
     TResult Function()? noNumber,
     TResult Function()? noUnit,
+    TResult Function()? noDayOfWeek,
     TResult Function()? noTimeOfDay,
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? shortPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
     TResult Function()? noName,
     TResult Function()? noNumber,
     TResult Function()? noUnit,
+    TResult Function()? noDayOfWeek,
     TResult Function()? noTimeOfDay,
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? shortPassword,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(NoName<T> value) noName,
     required TResult Function(NoNumber<T> value) noNumber,
     required TResult Function(NoUnit<T> value) noUnit,
+    required TResult Function(NoDayOfWeek<T> value) noDayOfWeek,
     required TResult Function(NoTimeOfDay<T> value) noTimeOfDay,
-    required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(ShortPassword<T> value) shortPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(NoName<T> value)? noName,
     TResult Function(NoNumber<T> value)? noNumber,
     TResult Function(NoUnit<T> value)? noUnit,
+    TResult Function(NoDayOfWeek<T> value)? noDayOfWeek,
     TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(ShortPassword<T> value)? shortPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(NoName<T> value)? noName,
     TResult Function(NoNumber<T> value)? noNumber,
     TResult Function(NoUnit<T> value)? noUnit,
+    TResult Function(NoDayOfWeek<T> value)? noDayOfWeek,
     TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(ShortPassword<T> value)? shortPassword,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -131,515 +141,6 @@ class _$ValueFailureCopyWithImpl<T, $Res>
   final ValueFailure<T> _value;
   // ignore: unused_field
   final $Res Function(ValueFailure<T>) _then;
-}
-
-/// @nodoc
-abstract class $NoNameCopyWith<T, $Res> {
-  factory $NoNameCopyWith(NoName<T> value, $Res Function(NoName<T>) then) =
-      _$NoNameCopyWithImpl<T, $Res>;
-}
-
-/// @nodoc
-class _$NoNameCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
-    implements $NoNameCopyWith<T, $Res> {
-  _$NoNameCopyWithImpl(NoName<T> _value, $Res Function(NoName<T>) _then)
-      : super(_value, (v) => _then(v as NoName<T>));
-
-  @override
-  NoName<T> get _value => super._value as NoName<T>;
-}
-
-/// @nodoc
-
-class _$NoName<T> implements NoName<T> {
-  const _$NoName();
-
-  @override
-  String toString() {
-    return 'ValueFailure<$T>.noName()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is NoName<T>);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() noName,
-    required TResult Function() noNumber,
-    required TResult Function() noUnit,
-    required TResult Function() noTimeOfDay,
-    required TResult Function(T failedValue) invalidEmail,
-    required TResult Function(T failedValue) shortPassword,
-  }) {
-    return noName();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? noName,
-    TResult Function()? noNumber,
-    TResult Function()? noUnit,
-    TResult Function()? noTimeOfDay,
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? shortPassword,
-  }) {
-    return noName?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? noName,
-    TResult Function()? noNumber,
-    TResult Function()? noUnit,
-    TResult Function()? noTimeOfDay,
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? shortPassword,
-    required TResult orElse(),
-  }) {
-    if (noName != null) {
-      return noName();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NoName<T> value) noName,
-    required TResult Function(NoNumber<T> value) noNumber,
-    required TResult Function(NoUnit<T> value) noUnit,
-    required TResult Function(NoTimeOfDay<T> value) noTimeOfDay,
-    required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(ShortPassword<T> value) shortPassword,
-  }) {
-    return noName(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NoName<T> value)? noName,
-    TResult Function(NoNumber<T> value)? noNumber,
-    TResult Function(NoUnit<T> value)? noUnit,
-    TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(ShortPassword<T> value)? shortPassword,
-  }) {
-    return noName?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NoName<T> value)? noName,
-    TResult Function(NoNumber<T> value)? noNumber,
-    TResult Function(NoUnit<T> value)? noUnit,
-    TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(ShortPassword<T> value)? shortPassword,
-    required TResult orElse(),
-  }) {
-    if (noName != null) {
-      return noName(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class NoName<T> implements ValueFailure<T> {
-  const factory NoName() = _$NoName<T>;
-}
-
-/// @nodoc
-abstract class $NoNumberCopyWith<T, $Res> {
-  factory $NoNumberCopyWith(
-          NoNumber<T> value, $Res Function(NoNumber<T>) then) =
-      _$NoNumberCopyWithImpl<T, $Res>;
-}
-
-/// @nodoc
-class _$NoNumberCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
-    implements $NoNumberCopyWith<T, $Res> {
-  _$NoNumberCopyWithImpl(NoNumber<T> _value, $Res Function(NoNumber<T>) _then)
-      : super(_value, (v) => _then(v as NoNumber<T>));
-
-  @override
-  NoNumber<T> get _value => super._value as NoNumber<T>;
-}
-
-/// @nodoc
-
-class _$NoNumber<T> implements NoNumber<T> {
-  const _$NoNumber();
-
-  @override
-  String toString() {
-    return 'ValueFailure<$T>.noNumber()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is NoNumber<T>);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() noName,
-    required TResult Function() noNumber,
-    required TResult Function() noUnit,
-    required TResult Function() noTimeOfDay,
-    required TResult Function(T failedValue) invalidEmail,
-    required TResult Function(T failedValue) shortPassword,
-  }) {
-    return noNumber();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? noName,
-    TResult Function()? noNumber,
-    TResult Function()? noUnit,
-    TResult Function()? noTimeOfDay,
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? shortPassword,
-  }) {
-    return noNumber?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? noName,
-    TResult Function()? noNumber,
-    TResult Function()? noUnit,
-    TResult Function()? noTimeOfDay,
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? shortPassword,
-    required TResult orElse(),
-  }) {
-    if (noNumber != null) {
-      return noNumber();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NoName<T> value) noName,
-    required TResult Function(NoNumber<T> value) noNumber,
-    required TResult Function(NoUnit<T> value) noUnit,
-    required TResult Function(NoTimeOfDay<T> value) noTimeOfDay,
-    required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(ShortPassword<T> value) shortPassword,
-  }) {
-    return noNumber(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NoName<T> value)? noName,
-    TResult Function(NoNumber<T> value)? noNumber,
-    TResult Function(NoUnit<T> value)? noUnit,
-    TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(ShortPassword<T> value)? shortPassword,
-  }) {
-    return noNumber?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NoName<T> value)? noName,
-    TResult Function(NoNumber<T> value)? noNumber,
-    TResult Function(NoUnit<T> value)? noUnit,
-    TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(ShortPassword<T> value)? shortPassword,
-    required TResult orElse(),
-  }) {
-    if (noNumber != null) {
-      return noNumber(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class NoNumber<T> implements ValueFailure<T> {
-  const factory NoNumber() = _$NoNumber<T>;
-}
-
-/// @nodoc
-abstract class $NoUnitCopyWith<T, $Res> {
-  factory $NoUnitCopyWith(NoUnit<T> value, $Res Function(NoUnit<T>) then) =
-      _$NoUnitCopyWithImpl<T, $Res>;
-}
-
-/// @nodoc
-class _$NoUnitCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
-    implements $NoUnitCopyWith<T, $Res> {
-  _$NoUnitCopyWithImpl(NoUnit<T> _value, $Res Function(NoUnit<T>) _then)
-      : super(_value, (v) => _then(v as NoUnit<T>));
-
-  @override
-  NoUnit<T> get _value => super._value as NoUnit<T>;
-}
-
-/// @nodoc
-
-class _$NoUnit<T> implements NoUnit<T> {
-  const _$NoUnit();
-
-  @override
-  String toString() {
-    return 'ValueFailure<$T>.noUnit()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is NoUnit<T>);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() noName,
-    required TResult Function() noNumber,
-    required TResult Function() noUnit,
-    required TResult Function() noTimeOfDay,
-    required TResult Function(T failedValue) invalidEmail,
-    required TResult Function(T failedValue) shortPassword,
-  }) {
-    return noUnit();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? noName,
-    TResult Function()? noNumber,
-    TResult Function()? noUnit,
-    TResult Function()? noTimeOfDay,
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? shortPassword,
-  }) {
-    return noUnit?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? noName,
-    TResult Function()? noNumber,
-    TResult Function()? noUnit,
-    TResult Function()? noTimeOfDay,
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? shortPassword,
-    required TResult orElse(),
-  }) {
-    if (noUnit != null) {
-      return noUnit();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NoName<T> value) noName,
-    required TResult Function(NoNumber<T> value) noNumber,
-    required TResult Function(NoUnit<T> value) noUnit,
-    required TResult Function(NoTimeOfDay<T> value) noTimeOfDay,
-    required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(ShortPassword<T> value) shortPassword,
-  }) {
-    return noUnit(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NoName<T> value)? noName,
-    TResult Function(NoNumber<T> value)? noNumber,
-    TResult Function(NoUnit<T> value)? noUnit,
-    TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(ShortPassword<T> value)? shortPassword,
-  }) {
-    return noUnit?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NoName<T> value)? noName,
-    TResult Function(NoNumber<T> value)? noNumber,
-    TResult Function(NoUnit<T> value)? noUnit,
-    TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(ShortPassword<T> value)? shortPassword,
-    required TResult orElse(),
-  }) {
-    if (noUnit != null) {
-      return noUnit(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class NoUnit<T> implements ValueFailure<T> {
-  const factory NoUnit() = _$NoUnit<T>;
-}
-
-/// @nodoc
-abstract class $NoTimeOfDayCopyWith<T, $Res> {
-  factory $NoTimeOfDayCopyWith(
-          NoTimeOfDay<T> value, $Res Function(NoTimeOfDay<T>) then) =
-      _$NoTimeOfDayCopyWithImpl<T, $Res>;
-}
-
-/// @nodoc
-class _$NoTimeOfDayCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
-    implements $NoTimeOfDayCopyWith<T, $Res> {
-  _$NoTimeOfDayCopyWithImpl(
-      NoTimeOfDay<T> _value, $Res Function(NoTimeOfDay<T>) _then)
-      : super(_value, (v) => _then(v as NoTimeOfDay<T>));
-
-  @override
-  NoTimeOfDay<T> get _value => super._value as NoTimeOfDay<T>;
-}
-
-/// @nodoc
-
-class _$NoTimeOfDay<T> implements NoTimeOfDay<T> {
-  const _$NoTimeOfDay();
-
-  @override
-  String toString() {
-    return 'ValueFailure<$T>.noTimeOfDay()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is NoTimeOfDay<T>);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() noName,
-    required TResult Function() noNumber,
-    required TResult Function() noUnit,
-    required TResult Function() noTimeOfDay,
-    required TResult Function(T failedValue) invalidEmail,
-    required TResult Function(T failedValue) shortPassword,
-  }) {
-    return noTimeOfDay();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? noName,
-    TResult Function()? noNumber,
-    TResult Function()? noUnit,
-    TResult Function()? noTimeOfDay,
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? shortPassword,
-  }) {
-    return noTimeOfDay?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? noName,
-    TResult Function()? noNumber,
-    TResult Function()? noUnit,
-    TResult Function()? noTimeOfDay,
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? shortPassword,
-    required TResult orElse(),
-  }) {
-    if (noTimeOfDay != null) {
-      return noTimeOfDay();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NoName<T> value) noName,
-    required TResult Function(NoNumber<T> value) noNumber,
-    required TResult Function(NoUnit<T> value) noUnit,
-    required TResult Function(NoTimeOfDay<T> value) noTimeOfDay,
-    required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(ShortPassword<T> value) shortPassword,
-  }) {
-    return noTimeOfDay(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NoName<T> value)? noName,
-    TResult Function(NoNumber<T> value)? noNumber,
-    TResult Function(NoUnit<T> value)? noUnit,
-    TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(ShortPassword<T> value)? shortPassword,
-  }) {
-    return noTimeOfDay?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NoName<T> value)? noName,
-    TResult Function(NoNumber<T> value)? noNumber,
-    TResult Function(NoUnit<T> value)? noUnit,
-    TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(ShortPassword<T> value)? shortPassword,
-    required TResult orElse(),
-  }) {
-    if (noTimeOfDay != null) {
-      return noTimeOfDay(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class NoTimeOfDay<T> implements ValueFailure<T> {
-  const factory NoTimeOfDay() = _$NoTimeOfDay<T>;
 }
 
 /// @nodoc
@@ -708,12 +209,13 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
     required TResult Function() noName,
     required TResult Function() noNumber,
     required TResult Function() noUnit,
+    required TResult Function() noDayOfWeek,
     required TResult Function() noTimeOfDay,
-    required TResult Function(T failedValue) invalidEmail,
-    required TResult Function(T failedValue) shortPassword,
   }) {
     return invalidEmail(failedValue);
   }
@@ -721,12 +223,13 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
     TResult Function()? noName,
     TResult Function()? noNumber,
     TResult Function()? noUnit,
+    TResult Function()? noDayOfWeek,
     TResult Function()? noTimeOfDay,
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? shortPassword,
   }) {
     return invalidEmail?.call(failedValue);
   }
@@ -734,12 +237,13 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
     TResult Function()? noName,
     TResult Function()? noNumber,
     TResult Function()? noUnit,
+    TResult Function()? noDayOfWeek,
     TResult Function()? noTimeOfDay,
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? shortPassword,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -751,12 +255,13 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(NoName<T> value) noName,
     required TResult Function(NoNumber<T> value) noNumber,
     required TResult Function(NoUnit<T> value) noUnit,
+    required TResult Function(NoDayOfWeek<T> value) noDayOfWeek,
     required TResult Function(NoTimeOfDay<T> value) noTimeOfDay,
-    required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(ShortPassword<T> value) shortPassword,
   }) {
     return invalidEmail(this);
   }
@@ -764,12 +269,13 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(NoName<T> value)? noName,
     TResult Function(NoNumber<T> value)? noNumber,
     TResult Function(NoUnit<T> value)? noUnit,
+    TResult Function(NoDayOfWeek<T> value)? noDayOfWeek,
     TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(ShortPassword<T> value)? shortPassword,
   }) {
     return invalidEmail?.call(this);
   }
@@ -777,12 +283,13 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(NoName<T> value)? noName,
     TResult Function(NoNumber<T> value)? noNumber,
     TResult Function(NoUnit<T> value)? noUnit,
+    TResult Function(NoDayOfWeek<T> value)? noDayOfWeek,
     TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(ShortPassword<T> value)? shortPassword,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -867,12 +374,13 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
     required TResult Function() noName,
     required TResult Function() noNumber,
     required TResult Function() noUnit,
+    required TResult Function() noDayOfWeek,
     required TResult Function() noTimeOfDay,
-    required TResult Function(T failedValue) invalidEmail,
-    required TResult Function(T failedValue) shortPassword,
   }) {
     return shortPassword(failedValue);
   }
@@ -880,12 +388,13 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
     TResult Function()? noName,
     TResult Function()? noNumber,
     TResult Function()? noUnit,
+    TResult Function()? noDayOfWeek,
     TResult Function()? noTimeOfDay,
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? shortPassword,
   }) {
     return shortPassword?.call(failedValue);
   }
@@ -893,12 +402,13 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
     TResult Function()? noName,
     TResult Function()? noNumber,
     TResult Function()? noUnit,
+    TResult Function()? noDayOfWeek,
     TResult Function()? noTimeOfDay,
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? shortPassword,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -910,12 +420,13 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(NoName<T> value) noName,
     required TResult Function(NoNumber<T> value) noNumber,
     required TResult Function(NoUnit<T> value) noUnit,
+    required TResult Function(NoDayOfWeek<T> value) noDayOfWeek,
     required TResult Function(NoTimeOfDay<T> value) noTimeOfDay,
-    required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(ShortPassword<T> value) shortPassword,
   }) {
     return shortPassword(this);
   }
@@ -923,12 +434,13 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(NoName<T> value)? noName,
     TResult Function(NoNumber<T> value)? noNumber,
     TResult Function(NoUnit<T> value)? noUnit,
+    TResult Function(NoDayOfWeek<T> value)? noDayOfWeek,
     TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(ShortPassword<T> value)? shortPassword,
   }) {
     return shortPassword?.call(this);
   }
@@ -936,12 +448,13 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(NoName<T> value)? noName,
     TResult Function(NoNumber<T> value)? noNumber,
     TResult Function(NoUnit<T> value)? noUnit,
+    TResult Function(NoDayOfWeek<T> value)? noDayOfWeek,
     TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(ShortPassword<T> value)? shortPassword,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -958,4 +471,672 @@ abstract class ShortPassword<T> implements ValueFailure<T> {
   @JsonKey(ignore: true)
   $ShortPasswordCopyWith<T, ShortPassword<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $NoNameCopyWith<T, $Res> {
+  factory $NoNameCopyWith(NoName<T> value, $Res Function(NoName<T>) then) =
+      _$NoNameCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class _$NoNameCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $NoNameCopyWith<T, $Res> {
+  _$NoNameCopyWithImpl(NoName<T> _value, $Res Function(NoName<T>) _then)
+      : super(_value, (v) => _then(v as NoName<T>));
+
+  @override
+  NoName<T> get _value => super._value as NoName<T>;
+}
+
+/// @nodoc
+
+class _$NoName<T> implements NoName<T> {
+  const _$NoName();
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.noName()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is NoName<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function() noName,
+    required TResult Function() noNumber,
+    required TResult Function() noUnit,
+    required TResult Function() noDayOfWeek,
+    required TResult Function() noTimeOfDay,
+  }) {
+    return noName();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function()? noName,
+    TResult Function()? noNumber,
+    TResult Function()? noUnit,
+    TResult Function()? noDayOfWeek,
+    TResult Function()? noTimeOfDay,
+  }) {
+    return noName?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function()? noName,
+    TResult Function()? noNumber,
+    TResult Function()? noUnit,
+    TResult Function()? noDayOfWeek,
+    TResult Function()? noTimeOfDay,
+    required TResult orElse(),
+  }) {
+    if (noName != null) {
+      return noName();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(NoName<T> value) noName,
+    required TResult Function(NoNumber<T> value) noNumber,
+    required TResult Function(NoUnit<T> value) noUnit,
+    required TResult Function(NoDayOfWeek<T> value) noDayOfWeek,
+    required TResult Function(NoTimeOfDay<T> value) noTimeOfDay,
+  }) {
+    return noName(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(NoName<T> value)? noName,
+    TResult Function(NoNumber<T> value)? noNumber,
+    TResult Function(NoUnit<T> value)? noUnit,
+    TResult Function(NoDayOfWeek<T> value)? noDayOfWeek,
+    TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
+  }) {
+    return noName?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(NoName<T> value)? noName,
+    TResult Function(NoNumber<T> value)? noNumber,
+    TResult Function(NoUnit<T> value)? noUnit,
+    TResult Function(NoDayOfWeek<T> value)? noDayOfWeek,
+    TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
+    required TResult orElse(),
+  }) {
+    if (noName != null) {
+      return noName(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NoName<T> implements ValueFailure<T> {
+  const factory NoName() = _$NoName<T>;
+}
+
+/// @nodoc
+abstract class $NoNumberCopyWith<T, $Res> {
+  factory $NoNumberCopyWith(
+          NoNumber<T> value, $Res Function(NoNumber<T>) then) =
+      _$NoNumberCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class _$NoNumberCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $NoNumberCopyWith<T, $Res> {
+  _$NoNumberCopyWithImpl(NoNumber<T> _value, $Res Function(NoNumber<T>) _then)
+      : super(_value, (v) => _then(v as NoNumber<T>));
+
+  @override
+  NoNumber<T> get _value => super._value as NoNumber<T>;
+}
+
+/// @nodoc
+
+class _$NoNumber<T> implements NoNumber<T> {
+  const _$NoNumber();
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.noNumber()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is NoNumber<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function() noName,
+    required TResult Function() noNumber,
+    required TResult Function() noUnit,
+    required TResult Function() noDayOfWeek,
+    required TResult Function() noTimeOfDay,
+  }) {
+    return noNumber();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function()? noName,
+    TResult Function()? noNumber,
+    TResult Function()? noUnit,
+    TResult Function()? noDayOfWeek,
+    TResult Function()? noTimeOfDay,
+  }) {
+    return noNumber?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function()? noName,
+    TResult Function()? noNumber,
+    TResult Function()? noUnit,
+    TResult Function()? noDayOfWeek,
+    TResult Function()? noTimeOfDay,
+    required TResult orElse(),
+  }) {
+    if (noNumber != null) {
+      return noNumber();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(NoName<T> value) noName,
+    required TResult Function(NoNumber<T> value) noNumber,
+    required TResult Function(NoUnit<T> value) noUnit,
+    required TResult Function(NoDayOfWeek<T> value) noDayOfWeek,
+    required TResult Function(NoTimeOfDay<T> value) noTimeOfDay,
+  }) {
+    return noNumber(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(NoName<T> value)? noName,
+    TResult Function(NoNumber<T> value)? noNumber,
+    TResult Function(NoUnit<T> value)? noUnit,
+    TResult Function(NoDayOfWeek<T> value)? noDayOfWeek,
+    TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
+  }) {
+    return noNumber?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(NoName<T> value)? noName,
+    TResult Function(NoNumber<T> value)? noNumber,
+    TResult Function(NoUnit<T> value)? noUnit,
+    TResult Function(NoDayOfWeek<T> value)? noDayOfWeek,
+    TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
+    required TResult orElse(),
+  }) {
+    if (noNumber != null) {
+      return noNumber(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NoNumber<T> implements ValueFailure<T> {
+  const factory NoNumber() = _$NoNumber<T>;
+}
+
+/// @nodoc
+abstract class $NoUnitCopyWith<T, $Res> {
+  factory $NoUnitCopyWith(NoUnit<T> value, $Res Function(NoUnit<T>) then) =
+      _$NoUnitCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class _$NoUnitCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $NoUnitCopyWith<T, $Res> {
+  _$NoUnitCopyWithImpl(NoUnit<T> _value, $Res Function(NoUnit<T>) _then)
+      : super(_value, (v) => _then(v as NoUnit<T>));
+
+  @override
+  NoUnit<T> get _value => super._value as NoUnit<T>;
+}
+
+/// @nodoc
+
+class _$NoUnit<T> implements NoUnit<T> {
+  const _$NoUnit();
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.noUnit()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is NoUnit<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function() noName,
+    required TResult Function() noNumber,
+    required TResult Function() noUnit,
+    required TResult Function() noDayOfWeek,
+    required TResult Function() noTimeOfDay,
+  }) {
+    return noUnit();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function()? noName,
+    TResult Function()? noNumber,
+    TResult Function()? noUnit,
+    TResult Function()? noDayOfWeek,
+    TResult Function()? noTimeOfDay,
+  }) {
+    return noUnit?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function()? noName,
+    TResult Function()? noNumber,
+    TResult Function()? noUnit,
+    TResult Function()? noDayOfWeek,
+    TResult Function()? noTimeOfDay,
+    required TResult orElse(),
+  }) {
+    if (noUnit != null) {
+      return noUnit();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(NoName<T> value) noName,
+    required TResult Function(NoNumber<T> value) noNumber,
+    required TResult Function(NoUnit<T> value) noUnit,
+    required TResult Function(NoDayOfWeek<T> value) noDayOfWeek,
+    required TResult Function(NoTimeOfDay<T> value) noTimeOfDay,
+  }) {
+    return noUnit(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(NoName<T> value)? noName,
+    TResult Function(NoNumber<T> value)? noNumber,
+    TResult Function(NoUnit<T> value)? noUnit,
+    TResult Function(NoDayOfWeek<T> value)? noDayOfWeek,
+    TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
+  }) {
+    return noUnit?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(NoName<T> value)? noName,
+    TResult Function(NoNumber<T> value)? noNumber,
+    TResult Function(NoUnit<T> value)? noUnit,
+    TResult Function(NoDayOfWeek<T> value)? noDayOfWeek,
+    TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
+    required TResult orElse(),
+  }) {
+    if (noUnit != null) {
+      return noUnit(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NoUnit<T> implements ValueFailure<T> {
+  const factory NoUnit() = _$NoUnit<T>;
+}
+
+/// @nodoc
+abstract class $NoDayOfWeekCopyWith<T, $Res> {
+  factory $NoDayOfWeekCopyWith(
+          NoDayOfWeek<T> value, $Res Function(NoDayOfWeek<T>) then) =
+      _$NoDayOfWeekCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class _$NoDayOfWeekCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $NoDayOfWeekCopyWith<T, $Res> {
+  _$NoDayOfWeekCopyWithImpl(
+      NoDayOfWeek<T> _value, $Res Function(NoDayOfWeek<T>) _then)
+      : super(_value, (v) => _then(v as NoDayOfWeek<T>));
+
+  @override
+  NoDayOfWeek<T> get _value => super._value as NoDayOfWeek<T>;
+}
+
+/// @nodoc
+
+class _$NoDayOfWeek<T> implements NoDayOfWeek<T> {
+  const _$NoDayOfWeek();
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.noDayOfWeek()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is NoDayOfWeek<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function() noName,
+    required TResult Function() noNumber,
+    required TResult Function() noUnit,
+    required TResult Function() noDayOfWeek,
+    required TResult Function() noTimeOfDay,
+  }) {
+    return noDayOfWeek();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function()? noName,
+    TResult Function()? noNumber,
+    TResult Function()? noUnit,
+    TResult Function()? noDayOfWeek,
+    TResult Function()? noTimeOfDay,
+  }) {
+    return noDayOfWeek?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function()? noName,
+    TResult Function()? noNumber,
+    TResult Function()? noUnit,
+    TResult Function()? noDayOfWeek,
+    TResult Function()? noTimeOfDay,
+    required TResult orElse(),
+  }) {
+    if (noDayOfWeek != null) {
+      return noDayOfWeek();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(NoName<T> value) noName,
+    required TResult Function(NoNumber<T> value) noNumber,
+    required TResult Function(NoUnit<T> value) noUnit,
+    required TResult Function(NoDayOfWeek<T> value) noDayOfWeek,
+    required TResult Function(NoTimeOfDay<T> value) noTimeOfDay,
+  }) {
+    return noDayOfWeek(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(NoName<T> value)? noName,
+    TResult Function(NoNumber<T> value)? noNumber,
+    TResult Function(NoUnit<T> value)? noUnit,
+    TResult Function(NoDayOfWeek<T> value)? noDayOfWeek,
+    TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
+  }) {
+    return noDayOfWeek?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(NoName<T> value)? noName,
+    TResult Function(NoNumber<T> value)? noNumber,
+    TResult Function(NoUnit<T> value)? noUnit,
+    TResult Function(NoDayOfWeek<T> value)? noDayOfWeek,
+    TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
+    required TResult orElse(),
+  }) {
+    if (noDayOfWeek != null) {
+      return noDayOfWeek(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NoDayOfWeek<T> implements ValueFailure<T> {
+  const factory NoDayOfWeek() = _$NoDayOfWeek<T>;
+}
+
+/// @nodoc
+abstract class $NoTimeOfDayCopyWith<T, $Res> {
+  factory $NoTimeOfDayCopyWith(
+          NoTimeOfDay<T> value, $Res Function(NoTimeOfDay<T>) then) =
+      _$NoTimeOfDayCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class _$NoTimeOfDayCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $NoTimeOfDayCopyWith<T, $Res> {
+  _$NoTimeOfDayCopyWithImpl(
+      NoTimeOfDay<T> _value, $Res Function(NoTimeOfDay<T>) _then)
+      : super(_value, (v) => _then(v as NoTimeOfDay<T>));
+
+  @override
+  NoTimeOfDay<T> get _value => super._value as NoTimeOfDay<T>;
+}
+
+/// @nodoc
+
+class _$NoTimeOfDay<T> implements NoTimeOfDay<T> {
+  const _$NoTimeOfDay();
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.noTimeOfDay()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is NoTimeOfDay<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function() noName,
+    required TResult Function() noNumber,
+    required TResult Function() noUnit,
+    required TResult Function() noDayOfWeek,
+    required TResult Function() noTimeOfDay,
+  }) {
+    return noTimeOfDay();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function()? noName,
+    TResult Function()? noNumber,
+    TResult Function()? noUnit,
+    TResult Function()? noDayOfWeek,
+    TResult Function()? noTimeOfDay,
+  }) {
+    return noTimeOfDay?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function()? noName,
+    TResult Function()? noNumber,
+    TResult Function()? noUnit,
+    TResult Function()? noDayOfWeek,
+    TResult Function()? noTimeOfDay,
+    required TResult orElse(),
+  }) {
+    if (noTimeOfDay != null) {
+      return noTimeOfDay();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(NoName<T> value) noName,
+    required TResult Function(NoNumber<T> value) noNumber,
+    required TResult Function(NoUnit<T> value) noUnit,
+    required TResult Function(NoDayOfWeek<T> value) noDayOfWeek,
+    required TResult Function(NoTimeOfDay<T> value) noTimeOfDay,
+  }) {
+    return noTimeOfDay(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(NoName<T> value)? noName,
+    TResult Function(NoNumber<T> value)? noNumber,
+    TResult Function(NoUnit<T> value)? noUnit,
+    TResult Function(NoDayOfWeek<T> value)? noDayOfWeek,
+    TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
+  }) {
+    return noTimeOfDay?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(NoName<T> value)? noName,
+    TResult Function(NoNumber<T> value)? noNumber,
+    TResult Function(NoUnit<T> value)? noUnit,
+    TResult Function(NoDayOfWeek<T> value)? noDayOfWeek,
+    TResult Function(NoTimeOfDay<T> value)? noTimeOfDay,
+    required TResult orElse(),
+  }) {
+    if (noTimeOfDay != null) {
+      return noTimeOfDay(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NoTimeOfDay<T> implements ValueFailure<T> {
+  const factory NoTimeOfDay() = _$NoTimeOfDay<T>;
 }

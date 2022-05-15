@@ -1,12 +1,16 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pillbase_flutter_app/presentation/core/theme.dart';
 import '../../application/auth/bloc/auth_bloc.dart';
+import '../../application/notifications/notifications_bloc.dart';
+import '../../application/pills/pill_worker/pill_worker_bloc.dart';
 import '../../domain/core/value_objects.dart';
-import '../main/main_page.dart';
-import '../pill_form/pill_form_page.dart';
-import '../pills_overview/pills_overview_page.dart';
+import '../dictionary/dictionary/dictionary_page.dart';
+import 'theme.dart';
+import '../home/home_page.dart';
+import '../patient/pill_form/pill_form_page.dart';
+import '../patient/pill_overview/pill_overview_page.dart';
+import '../patient/pills_overview/pills_overview_page.dart';
 
 import '../../injection.dart';
 import '../sign_in/sign_in_page.dart';
@@ -20,6 +24,53 @@ class AppWidget extends StatefulWidget {
 }
 
 class _AppWidgetState extends State<AppWidget> {
+  @override
+  void initState() {
+    super.initState();
+
+    final checkId = UniqueId().getOrCrash();
+    String? groupKey;
+    String? dateTime;
+
+    AwesomeNotifications().displayedStream.listen((notification) {
+      groupKey = notification.groupKey;
+      dateTime = DateTime.now().toIso8601String();
+
+      context.read<PillWorkerBloc>().add(PillWorkerEvent.createdUpdated(
+            pillId: groupKey as String,
+            dateTime: dateTime as String,
+            check: false,
+            checkId: checkId,
+          ));
+    });
+
+    AwesomeNotifications().actionStream.listen((notification) {
+      if (notification.buttonKeyPressed == 'DONE') {
+        context.read<PillWorkerBloc>().add(
+              PillWorkerEvent.createdUpdated(
+                pillId: groupKey as String,
+                dateTime: dateTime as String,
+                check: true,
+                checkId: checkId,
+              ),
+            );
+      }
+      // Navigator.pushAndRemoveUntil(
+      //   context,
+      //   MaterialPageRoute(
+      //     builder: (_) => const PillsOverviewPage(),
+      //   ),
+      //   (route) => route.isFirst,
+      // );
+    });
+  }
+
+  @override
+  void dispose() {
+    AwesomeNotifications().actionSink.close();
+    AwesomeNotifications().displayedSink.close();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +82,12 @@ class _AppWidgetState extends State<AppWidget> {
               const AuthEvent.authCheckRequested(),
             ),
         ),
+        BlocProvider(
+          create: (context) => sl<NotificationsBloc>()
+            ..add(
+              const NotificationsEvent.notificationPermissionCheckRequested(),
+            ),
+        )
       ],
       child: MaterialApp(
         title: 'Pills',
@@ -38,10 +95,13 @@ class _AppWidgetState extends State<AppWidget> {
         theme: lightThemeData(context),
         home: const SplashPage(),
         routes: {
+          SplashPage.routeName: (ctx) => const SplashPage(),
           SignInPage.routeName: (ctx) => const SignInPage(),
-          PillFormPage.routeName: (ctx) => const PillFormPage(),
           PillsOverviewPage.routeName: (ctx) => const PillsOverviewPage(),
-          MainPage.routeName: (ctx) => const MainPage(),
+          PillFormPage.routeName: (ctx) => const PillFormPage(),
+          HomePage.routeName: (ctx) => const HomePage(),
+          PillOverviewPage.routeName: (ctx) => const PillOverviewPage(),
+          DictionaryPage.routeName: (ctx) => const DictionaryPage(),
         },
       ),
     );

@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../../domain/auth/app_user.dart';
 import '../../domain/auth/auth_failure.dart';
 import '../../domain/auth/i_auth_facade.dart';
-import '../../domain/auth/app_user.dart';
 import '../../domain/auth/value_objects.dart';
 import 'firebase_user_mapper.dart';
 

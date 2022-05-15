@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import '../../../domain/auth/auth_failure.dart';
 import '../../../domain/auth/i_auth_facade.dart';
 import '../../../domain/auth/value_objects.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'sign_in_form_event.dart';
 part 'sign_in_form_state.dart';
@@ -16,6 +16,22 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
       : super(SignInFormState.initial()) {
     on<SignInFormEvent>((event, emit) async {
       await event.map(
+        emailChanged: (e) {
+          emit(
+            state.copyWith(
+              emailAddress: EmailAddress(e.emailString),
+              authFailureOrSuccessOption: none(),
+            ),
+          );
+        },
+        passwordChanged: (e) {
+          emit(
+            state.copyWith(
+              password: Password(e.passwordString),
+              authFailureOrSuccessOption: none(),
+            ),
+          );
+        },
         registerWithEmailAndPasswordPressed: (e) async {
           final isEmailValid = state.emailAddress.isValid();
           final isPasswordValid = state.password.isValid();
@@ -38,22 +54,6 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
               showErrorMessage: true,
               isSubmitting: false,
               authFailureOrSuccessOption: optionOf(failureOrSuccess),
-            ),
-          );
-        },
-        emailChanged: (e) {
-          emit(
-            state.copyWith(
-              emailAddress: EmailAddress(e.emailString),
-              authFailureOrSuccessOption: none(),
-            ),
-          );
-        },
-        passwordChanged: (e) {
-          emit(
-            state.copyWith(
-              password: Password(e.passwordString),
-              authFailureOrSuccessOption: none(),
             ),
           );
         },

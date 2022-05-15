@@ -23,13 +23,25 @@ class _$PillTearOff {
       required PillName pillName,
       required PillNumber pillNumber,
       required PillUnit pillUnit,
-      required PillNotificationTimeOfDay timeOfDay}) {
+      required List<int?> notificationIds,
+      required PillNotificationDaysOfWeek daysOfWeek,
+      required List<bool> daysOfWeekBool,
+      required PillNotificationTimeOfDay timeOfDay,
+      required DateTime pillDateTime,
+      required UniqueId notifyId,
+      required PillCheckItemsList pillCheckItemsList}) {
     return _Pill(
       id: id,
       pillName: pillName,
       pillNumber: pillNumber,
       pillUnit: pillUnit,
+      notificationIds: notificationIds,
+      daysOfWeek: daysOfWeek,
+      daysOfWeekBool: daysOfWeekBool,
       timeOfDay: timeOfDay,
+      pillDateTime: pillDateTime,
+      notifyId: notifyId,
+      pillCheckItemsList: pillCheckItemsList,
     );
   }
 }
@@ -43,7 +55,15 @@ mixin _$Pill {
   PillName get pillName => throw _privateConstructorUsedError;
   PillNumber get pillNumber => throw _privateConstructorUsedError;
   PillUnit get pillUnit => throw _privateConstructorUsedError;
+  List<int?> get notificationIds => throw _privateConstructorUsedError;
+  PillNotificationDaysOfWeek get daysOfWeek =>
+      throw _privateConstructorUsedError;
+  List<bool> get daysOfWeekBool => throw _privateConstructorUsedError;
   PillNotificationTimeOfDay get timeOfDay => throw _privateConstructorUsedError;
+  DateTime get pillDateTime => throw _privateConstructorUsedError;
+  UniqueId get notifyId => throw _privateConstructorUsedError;
+  PillCheckItemsList get pillCheckItemsList =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PillCopyWith<Pill> get copyWith => throw _privateConstructorUsedError;
@@ -58,7 +78,13 @@ abstract class $PillCopyWith<$Res> {
       PillName pillName,
       PillNumber pillNumber,
       PillUnit pillUnit,
-      PillNotificationTimeOfDay timeOfDay});
+      List<int?> notificationIds,
+      PillNotificationDaysOfWeek daysOfWeek,
+      List<bool> daysOfWeekBool,
+      PillNotificationTimeOfDay timeOfDay,
+      DateTime pillDateTime,
+      UniqueId notifyId,
+      PillCheckItemsList pillCheckItemsList});
 }
 
 /// @nodoc
@@ -75,7 +101,13 @@ class _$PillCopyWithImpl<$Res> implements $PillCopyWith<$Res> {
     Object? pillName = freezed,
     Object? pillNumber = freezed,
     Object? pillUnit = freezed,
+    Object? notificationIds = freezed,
+    Object? daysOfWeek = freezed,
+    Object? daysOfWeekBool = freezed,
     Object? timeOfDay = freezed,
+    Object? pillDateTime = freezed,
+    Object? notifyId = freezed,
+    Object? pillCheckItemsList = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -94,10 +126,34 @@ class _$PillCopyWithImpl<$Res> implements $PillCopyWith<$Res> {
           ? _value.pillUnit
           : pillUnit // ignore: cast_nullable_to_non_nullable
               as PillUnit,
+      notificationIds: notificationIds == freezed
+          ? _value.notificationIds
+          : notificationIds // ignore: cast_nullable_to_non_nullable
+              as List<int?>,
+      daysOfWeek: daysOfWeek == freezed
+          ? _value.daysOfWeek
+          : daysOfWeek // ignore: cast_nullable_to_non_nullable
+              as PillNotificationDaysOfWeek,
+      daysOfWeekBool: daysOfWeekBool == freezed
+          ? _value.daysOfWeekBool
+          : daysOfWeekBool // ignore: cast_nullable_to_non_nullable
+              as List<bool>,
       timeOfDay: timeOfDay == freezed
           ? _value.timeOfDay
           : timeOfDay // ignore: cast_nullable_to_non_nullable
               as PillNotificationTimeOfDay,
+      pillDateTime: pillDateTime == freezed
+          ? _value.pillDateTime
+          : pillDateTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      notifyId: notifyId == freezed
+          ? _value.notifyId
+          : notifyId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      pillCheckItemsList: pillCheckItemsList == freezed
+          ? _value.pillCheckItemsList
+          : pillCheckItemsList // ignore: cast_nullable_to_non_nullable
+              as PillCheckItemsList,
     ));
   }
 }
@@ -112,7 +168,13 @@ abstract class _$PillCopyWith<$Res> implements $PillCopyWith<$Res> {
       PillName pillName,
       PillNumber pillNumber,
       PillUnit pillUnit,
-      PillNotificationTimeOfDay timeOfDay});
+      List<int?> notificationIds,
+      PillNotificationDaysOfWeek daysOfWeek,
+      List<bool> daysOfWeekBool,
+      PillNotificationTimeOfDay timeOfDay,
+      DateTime pillDateTime,
+      UniqueId notifyId,
+      PillCheckItemsList pillCheckItemsList});
 }
 
 /// @nodoc
@@ -130,7 +192,13 @@ class __$PillCopyWithImpl<$Res> extends _$PillCopyWithImpl<$Res>
     Object? pillName = freezed,
     Object? pillNumber = freezed,
     Object? pillUnit = freezed,
+    Object? notificationIds = freezed,
+    Object? daysOfWeek = freezed,
+    Object? daysOfWeekBool = freezed,
     Object? timeOfDay = freezed,
+    Object? pillDateTime = freezed,
+    Object? notifyId = freezed,
+    Object? pillCheckItemsList = freezed,
   }) {
     return _then(_Pill(
       id: id == freezed
@@ -149,10 +217,34 @@ class __$PillCopyWithImpl<$Res> extends _$PillCopyWithImpl<$Res>
           ? _value.pillUnit
           : pillUnit // ignore: cast_nullable_to_non_nullable
               as PillUnit,
+      notificationIds: notificationIds == freezed
+          ? _value.notificationIds
+          : notificationIds // ignore: cast_nullable_to_non_nullable
+              as List<int?>,
+      daysOfWeek: daysOfWeek == freezed
+          ? _value.daysOfWeek
+          : daysOfWeek // ignore: cast_nullable_to_non_nullable
+              as PillNotificationDaysOfWeek,
+      daysOfWeekBool: daysOfWeekBool == freezed
+          ? _value.daysOfWeekBool
+          : daysOfWeekBool // ignore: cast_nullable_to_non_nullable
+              as List<bool>,
       timeOfDay: timeOfDay == freezed
           ? _value.timeOfDay
           : timeOfDay // ignore: cast_nullable_to_non_nullable
               as PillNotificationTimeOfDay,
+      pillDateTime: pillDateTime == freezed
+          ? _value.pillDateTime
+          : pillDateTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      notifyId: notifyId == freezed
+          ? _value.notifyId
+          : notifyId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      pillCheckItemsList: pillCheckItemsList == freezed
+          ? _value.pillCheckItemsList
+          : pillCheckItemsList // ignore: cast_nullable_to_non_nullable
+              as PillCheckItemsList,
     ));
   }
 }
@@ -165,7 +257,13 @@ class _$_Pill extends _Pill {
       required this.pillName,
       required this.pillNumber,
       required this.pillUnit,
-      required this.timeOfDay})
+      required this.notificationIds,
+      required this.daysOfWeek,
+      required this.daysOfWeekBool,
+      required this.timeOfDay,
+      required this.pillDateTime,
+      required this.notifyId,
+      required this.pillCheckItemsList})
       : super._();
 
   @override
@@ -177,11 +275,23 @@ class _$_Pill extends _Pill {
   @override
   final PillUnit pillUnit;
   @override
+  final List<int?> notificationIds;
+  @override
+  final PillNotificationDaysOfWeek daysOfWeek;
+  @override
+  final List<bool> daysOfWeekBool;
+  @override
   final PillNotificationTimeOfDay timeOfDay;
+  @override
+  final DateTime pillDateTime;
+  @override
+  final UniqueId notifyId;
+  @override
+  final PillCheckItemsList pillCheckItemsList;
 
   @override
   String toString() {
-    return 'Pill(id: $id, pillName: $pillName, pillNumber: $pillNumber, pillUnit: $pillUnit, timeOfDay: $timeOfDay)';
+    return 'Pill(id: $id, pillName: $pillName, pillNumber: $pillNumber, pillUnit: $pillUnit, notificationIds: $notificationIds, daysOfWeek: $daysOfWeek, daysOfWeekBool: $daysOfWeekBool, timeOfDay: $timeOfDay, pillDateTime: $pillDateTime, notifyId: $notifyId, pillCheckItemsList: $pillCheckItemsList)';
   }
 
   @override
@@ -194,7 +304,18 @@ class _$_Pill extends _Pill {
             const DeepCollectionEquality()
                 .equals(other.pillNumber, pillNumber) &&
             const DeepCollectionEquality().equals(other.pillUnit, pillUnit) &&
-            const DeepCollectionEquality().equals(other.timeOfDay, timeOfDay));
+            const DeepCollectionEquality()
+                .equals(other.notificationIds, notificationIds) &&
+            const DeepCollectionEquality()
+                .equals(other.daysOfWeek, daysOfWeek) &&
+            const DeepCollectionEquality()
+                .equals(other.daysOfWeekBool, daysOfWeekBool) &&
+            const DeepCollectionEquality().equals(other.timeOfDay, timeOfDay) &&
+            const DeepCollectionEquality()
+                .equals(other.pillDateTime, pillDateTime) &&
+            const DeepCollectionEquality().equals(other.notifyId, notifyId) &&
+            const DeepCollectionEquality()
+                .equals(other.pillCheckItemsList, pillCheckItemsList));
   }
 
   @override
@@ -204,7 +325,13 @@ class _$_Pill extends _Pill {
       const DeepCollectionEquality().hash(pillName),
       const DeepCollectionEquality().hash(pillNumber),
       const DeepCollectionEquality().hash(pillUnit),
-      const DeepCollectionEquality().hash(timeOfDay));
+      const DeepCollectionEquality().hash(notificationIds),
+      const DeepCollectionEquality().hash(daysOfWeek),
+      const DeepCollectionEquality().hash(daysOfWeekBool),
+      const DeepCollectionEquality().hash(timeOfDay),
+      const DeepCollectionEquality().hash(pillDateTime),
+      const DeepCollectionEquality().hash(notifyId),
+      const DeepCollectionEquality().hash(pillCheckItemsList));
 
   @JsonKey(ignore: true)
   @override
@@ -218,7 +345,13 @@ abstract class _Pill extends Pill {
       required PillName pillName,
       required PillNumber pillNumber,
       required PillUnit pillUnit,
-      required PillNotificationTimeOfDay timeOfDay}) = _$_Pill;
+      required List<int?> notificationIds,
+      required PillNotificationDaysOfWeek daysOfWeek,
+      required List<bool> daysOfWeekBool,
+      required PillNotificationTimeOfDay timeOfDay,
+      required DateTime pillDateTime,
+      required UniqueId notifyId,
+      required PillCheckItemsList pillCheckItemsList}) = _$_Pill;
   const _Pill._() : super._();
 
   @override
@@ -230,7 +363,19 @@ abstract class _Pill extends Pill {
   @override
   PillUnit get pillUnit;
   @override
+  List<int?> get notificationIds;
+  @override
+  PillNotificationDaysOfWeek get daysOfWeek;
+  @override
+  List<bool> get daysOfWeekBool;
+  @override
   PillNotificationTimeOfDay get timeOfDay;
+  @override
+  DateTime get pillDateTime;
+  @override
+  UniqueId get notifyId;
+  @override
+  PillCheckItemsList get pillCheckItemsList;
   @override
   @JsonKey(ignore: true)
   _$PillCopyWith<_Pill> get copyWith => throw _privateConstructorUsedError;
