@@ -11,7 +11,6 @@ class PillsOverviewBody extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return BlocBuilder<PillWatcherBloc, PillWatcherState>(
       builder: (context, state) {
-        print('Hello ${state}');
         return state.map(
             initial: (_) => Container(),
             loadInProgress: (_) =>
