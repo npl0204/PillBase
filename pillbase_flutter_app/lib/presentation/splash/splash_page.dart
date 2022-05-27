@@ -18,7 +18,6 @@ class SplashPage extends StatelessWidget {
           authenticated: (_) {
             Navigator.pushReplacementNamed(
               context,
-              // MainPage.routeName,
               HomePage.routeName,
             );
           },

@@ -9,10 +9,8 @@ class PillCheckItemTile extends StatefulWidget {
   const PillCheckItemTile({
     Key? key,
     required this.index,
-    // add required this.ctx,
   }) : super(key: key);
   final int index;
-  // add final BuildContext ctx;
 
   @override
   State<PillCheckItemTile> createState() => _PillCheckItemTileState();
@@ -22,10 +20,6 @@ class _PillCheckItemTileState extends State<PillCheckItemTile> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    // add final pill = widget.ctx.read<PillWorkerBloc>().state.pill;
-    // add final pillCheckItem =
-    //     List.from(pill!.pillCheckItemsList.getOrCrash().reversed)[widget.index]
-    //         as PillCheckItem;
 
     return BlocBuilder<PillWorkerBloc, PillWorkerState>(
       buildWhen: (p, c) => p.pill != c.pill,
@@ -66,17 +60,6 @@ class _PillCheckItemTileState extends State<PillCheckItemTile> {
                                 : item,
                           )
                           .toList();
-                      //add  widget.ctx.read<PillWorkerBloc>().add(
-                      //       PillWorkerEvent.changed(updatedPillCheckItemList),
-                      //     );
-                      //add  widget.ctx.read<PillWorkerBloc>().add(
-                      //       PillWorkerEvent.createdUpdated(
-                      //         pillId: pill.id.getOrCrash(),
-                      //         dateTime: pillCheckItem.dateTime.toIso8601String(),
-                      //         check: value as bool,
-                      //         checkId: pillCheckItem.id.getOrCrash().toString(),
-                      //       ),
-                      //     );
                       context.read<PillWorkerBloc>().add(
                             PillWorkerEvent.changed(updatedPillCheckItemList),
                           );

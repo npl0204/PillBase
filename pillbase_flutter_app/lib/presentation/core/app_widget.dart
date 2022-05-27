@@ -57,13 +57,7 @@ class _AppWidgetState extends State<AppWidget> {
               ),
             );
       }
-      // Navigator.pushAndRemoveUntil(
-      //   context,
-      //   MaterialPageRoute(
-      //     builder: (_) => const PillsOverviewPage(),
-      //   ),
-      //   (route) => route.isFirst,
-      // );
+
     });
   }
 

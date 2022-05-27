@@ -32,7 +32,6 @@ class SignInForm extends StatelessWidget {
               Navigator.pushReplacementNamed(
                 context,
                 HomePage.routeName,
-                // MainPage.routeName,
               ),
               context
                   .read<AuthBloc>()

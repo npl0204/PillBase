@@ -44,9 +44,6 @@ class PillFormPage extends StatelessWidget {
                     ),
                   ).show(context);
                 },
-                // (_) => Navigator.of(context).popUntil(
-                //   (route) => route.settings.name == PillsOverviewPage.routeName,
-                // ),
                 (_) => Navigator.of(context).pop(),
               );
             });

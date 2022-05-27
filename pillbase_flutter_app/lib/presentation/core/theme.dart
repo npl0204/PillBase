@@ -8,8 +8,6 @@ ThemeData lightThemeData(BuildContext context) {
     scaffoldBackgroundColor: kBackColorLightTheme,
     iconTheme: const IconThemeData(color: kContentColorLightTheme),
     canvasColor: kBackColorLightTheme,
-    // textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme)
-    //     .apply(bodyColor: kContentColorLightTheme, fontFamily: 'Montserrat'),
     colorScheme: const ColorScheme.light(
       primary: kPrimaryColor,
       secondary: kSecondaryColor,

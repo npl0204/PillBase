@@ -147,79 +147,10 @@ class PillCard extends StatelessWidget {
                     )
                   ],
                 )
-
-                // subtitle: Text(
-                //   "${pill.pillNumber.getOrCrash()} ${pill.pillUnit.getOrCrash()}",
-                //   style: Theme.of(context).textTheme.headline5!.copyWith(
-                //         color: Colors.grey[600],
-                //         fontSize: 15.0,
-                //       ),
-                //   maxLines: 1,
-                //   overflow: TextOverflow.ellipsis,
-                // ),
-                // trailing: Column(
-                //   mainAxisAlignment: MainAxisAlignment.start,
-                //   children: [
-                //     // Text(
-                //     //   DateFormat("HH:mm").format(pill.pillDateTime),
-                //     //   style: TextStyle(
-                //     //     color: Colors.grey[500],
-                //     //     fontWeight: FontWeight.w400,
-                //     //     fontSize: 15,
-                //     //   ),
-                //     // ),
-                //     IconButton(
-                //       icon: const Icon(Icons.edit_notifications_rounded),
-                //       onPressed: () => Navigator.of(context).pushNamed(
-                //         PillFormPage.routeName,
-                //         arguments: pill,
-                //       ),
-                //     ),
-                // ],
                 ),
           ),
         ),
       ),
     );
   }
-
-  //--------------------------| SHOW THE DELETE DIALOG ON THE SCREEN |-----------------------
-
-  // void _showDeleteDialog(
-  //     BuildContext context, String medicineName, int medicineId, int notifyId) {
-  //   showDialog(
-  //       context: context,
-  //       builder: (context) => AlertDialog(
-  //             title: Text("Delete ?"),
-  //             content: Text("Are you sure to delete $medicineName pill?"),
-  //             contentTextStyle:
-  //                 TextStyle(fontSize: 17.0, color: Colors.grey[800]),
-  //             actions: [
-  //               FlatButton(
-  //                 splashColor: Theme.of(context).primaryColor.withOpacity(0.3),
-  //                 child: Text(
-  //                   "Cancel",
-  //                   style: TextStyle(color: Theme.of(context).primaryColor),
-  //                 ),
-  //                 onPressed: () {
-  //                   Navigator.of(context).pop();
-  //                 },
-  //               ),
-  //               FlatButton(
-  //                 splashColor: Theme.of(context).primaryColor.withOpacity(0.3),
-  //                 child: Text("Delete",
-  //                     style: TextStyle(color: Theme.of(context).primaryColor)),
-  //                 onPressed: () async {
-  //                   await Repository().deleteData('Pills', medicineId);
-  //                   await Notifications().removeNotify(
-  //                       notifyId, flutterLocalNotificationsPlugin);
-  //                   setData();
-  //                   Navigator.pop(context);
-  //                 },
-  //               ),
-  //             ],
-  //           ));
-  // }
-  //============================================================================================
-
 }

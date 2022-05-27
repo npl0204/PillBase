@@ -38,8 +38,6 @@ class PillsOverviewBody extends StatelessWidget {
                           final pill = state.pills[index];
                           if (pill.failureOption.isSome()) {
                             return PillCard(pill: pill);
-                            //TODO: correct this
-                            // return ErrorNoteCard(pill: pill);
                           } else {
                             return PillCard(pill: pill);
                           }
@@ -54,9 +52,6 @@ class PillsOverviewBody extends StatelessWidget {
             loadFailure: (state) {
               return Container();
             }
-            // => CriticalFailureDisplay(
-            //   failure: state.pillFailure,
-            // ),
             );
       },
     );

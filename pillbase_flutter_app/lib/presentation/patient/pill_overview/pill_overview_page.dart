@@ -14,11 +14,9 @@ class PillOverviewPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //delete:
     final pill = ModalRoute.of(context)?.settings.arguments as Pill;
 
     return
-        //delete BlocProvider
         BlocProvider(
       create: (context) =>
           sl<PillWorkerBloc>()..add(PillWorkerEvent.initialized(pill)),
@@ -39,9 +37,6 @@ class PillOverviewPage extends StatelessWidget {
                   ),
                 ).show(context);
               },
-              // (_) => Navigator.of(context).popUntil(
-              //   (route) => route.settings.name == PillsOverviewPage.routeName,
-              // ),
               (_) => Navigator.of(context).pop(),
             );
           });
@@ -68,9 +63,6 @@ class PillWorkerPageScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    // add: final ctx = ModalRoute.of(context)?.settings.arguments as BuildContext;
-    // add: final pill = ctx.read<PillWorkerBloc>().state.pill;
-    //delete:
 
     return Scaffold(
       appBar: AppBar(
@@ -139,7 +131,6 @@ class PillWorkerPageScaffold extends StatelessWidget {
                               itemBuilder: (context, index) {
                                 return PillCheckItemTile(
                                   index: index,
-                                  // ctx: ctx
                                 );
                               },
                               itemCount:
