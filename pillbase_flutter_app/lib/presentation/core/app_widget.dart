@@ -1,11 +1,13 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_pill_app/presentation/calendar/calendar_page.dart';
 import '../../application/auth/bloc/auth_bloc.dart';
 import '../../application/notifications/notifications_bloc.dart';
 import '../../application/pills/pill_worker/pill_worker_bloc.dart';
 import '../../domain/core/value_objects.dart';
 import '../dictionary/dictionary/dictionary_page.dart';
+import '../dictionary/entry/entry_page.dart';
 import 'theme.dart';
 import '../home/home_page.dart';
 import '../patient/pill_form/pill_form_page.dart';
@@ -102,6 +104,8 @@ class _AppWidgetState extends State<AppWidget> {
           HomePage.routeName: (ctx) => const HomePage(),
           PillOverviewPage.routeName: (ctx) => const PillOverviewPage(),
           DictionaryPage.routeName: (ctx) => const DictionaryPage(),
+          CalendarPage.routeName: (ctx) => const CalendarPage(),
+          EntryPage.routeName:(ctx) => const EntryPage(),
         },
       ),
     );

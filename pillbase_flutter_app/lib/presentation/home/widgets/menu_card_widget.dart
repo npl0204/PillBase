@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pill_app/presentation/dictionary/dictionary/dictionary_page.dart';
 
+import '../../calendar/calendar_page.dart';
 import '../../patient/pill_form/pill_form_page.dart';
 import '../../patient/pills_overview/pills_overview_page.dart';
 import 'menu_item_widget.dart';
@@ -22,7 +23,7 @@ class MenuCard extends StatelessWidget {
         'label': 'Search Medications'
       },
       2: {
-        'route': PillFormPage.routeName,
+        'route': CalendarPage.routeName,
         'icon': Icons.calendar_today_rounded,
         'label': 'View Calendar'
       },

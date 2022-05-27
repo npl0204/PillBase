@@ -21,11 +21,10 @@ class EntryTile extends StatelessWidget {
           child: ListTile(
             title: Text(entry.entryName),
             trailing: IconButton(
-              // onPressed: () => Navigator.of(context).pushNamed(
-              //   EntryPage.routeName,
-              //   arguments: entry,
-              // ),
-              onPressed: (){},
+              onPressed: () => Navigator.of(context).pushNamed(
+                EntryPage.routeName,
+                arguments: entry,
+              ),
               icon: const Icon(Icons.arrow_forward_ios_rounded),
             ),
           ),
