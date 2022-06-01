@@ -29,7 +29,7 @@ For test purposes, adhere to manual testing.
 
 1. The code was written under DDD (Domain Driven Development) principles.
 2. There four major parts: presentation, domain, application, and infrastructure.
-3.All the UI components should be added under separate folder (for each page) in presentation folder.
+3. All the UI components should be added under separate folder (for each page) in presentation folder.
 4. All state management should be added under separate folder in application folder.
 5. All value objects (entities) should be added to the domain folder.
 6. All logic and work with external services should be added to infrastructure folder.
