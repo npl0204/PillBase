@@ -28,7 +28,7 @@ For test purposes, adhere to manual testing.
 #Instructions on changing the codebase:
 
 The code was written under DDD (Domain Driven Development) principles.
-There four major parts: presentation, domain, application, and infrastructure.
+\nThere four major parts: presentation, domain, application, and infrastructure.
 All the UI components should be added under separate folder (for each page) in presentation folder.
 All state management should be added under separate folder in application folder.
 All value objects (entities) should be added to the domain folder.
