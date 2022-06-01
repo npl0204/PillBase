@@ -1,10 +1,10 @@
-# Team Liftoff
+# PillBase
 
 The app was developed by Amir Kaidarov, Katie Wu, Linh Nguyen, and Amalia Sorribes
 as a team project for Computer and Informatics Design course in Drexel Univesity.
 
 
-#Minimum requirements to run the code:
+# Minimum requirements to run the code:
 
 1. Code Editor or IDE (Visual Studio or Android Studio)
 2. Flutter Software Developoment Kit
@@ -12,20 +12,20 @@ as a team project for Computer and Informatics Design course in Drexel Univesity
 4. Internet connection
 
 
-#Instructions to deploy the code:
+# Instructions to deploy the code:
 
 1. Set up Android Emulator or Android device
 2. Ensure that IDE or code editor sees the device
 3. Run the code 
 
 
-#Testing:
+# Testing:
 
 No unit, widget, or integration tests were written for this project.
 For test purposes, adhere to manual testing.
 
 
-#Instructions on changing the codebase:
+# Instructions on changing the codebase:
 
 1. The code was written under DDD (Domain Driven Development) principles.
 2. There four major parts: presentation, domain, application, and infrastructure.
@@ -38,7 +38,7 @@ For test purposes, adhere to manual testing.
 For the state management, the team chose BLOC pattern.
 
 
-#Dependencies:
+# Dependencies:
 1. To compare objects by value: freezed_annotation & freezed
 2. For state management: flutter_bloc
 3. To work with Firebase: cloud_firestore & firebase_core & firebase_auth & firebase_messaging
